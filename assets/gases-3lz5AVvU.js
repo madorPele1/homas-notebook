@@ -1,0 +1,1 @@
+const i=[{id:"propane",title:"Propane",description:"A highly flammable gas commonly used as fuel."},{id:"ammonia",title:"Ammonia",description:"A toxic gas used in industrial refrigeration."}],a={topics:i};export{a as default,i as topics};
