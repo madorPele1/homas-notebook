@@ -5,6 +5,10 @@ import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
 import ItemPage from './pages/ItemPage';
 
+import "@fontsource/heebo/200.css";
+import "@fontsource/heebo/400.css";
+import "@fontsource/heebo/700.css";
+
 function App() {
   return (
     <Routes>

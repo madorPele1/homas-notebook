@@ -29,7 +29,7 @@ function HomePage() {
             position: "absolute",
             top: "-5%",
           }}
-          src="/test-notebook/assets/notebookBG.svg"
+          src="/homas-notebook/assets/notebookBG.svg"
           alt="notebookBG"
         />
         <div
@@ -49,13 +49,13 @@ function HomePage() {
               style={{
                 width: "30px",
               }}
-              src="/test-notebook/assets/ham-menu.svg"
+              src="/homas-notebook/assets/ham-menu.svg"
               alt="hamburger-menu"
             />
           </button>
           <h1>פנקס החומ"ס</h1>
           <img
-            src="/test-notebook/assets/rhombus.svg"
+            src="/homas-notebook/assets/rhombus.svg"
             style={{
               width: "10%",
               background: "white",
@@ -88,7 +88,7 @@ function HomePage() {
             }}
           />
           <img
-            src="/test-notebook/assets/magnifying-glass.svg"
+            src="/homas-notebook/assets/magnifying-glass.svg"
             alt="search icon"
             style={{
               position: "absolute",

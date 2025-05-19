@@ -15,7 +15,7 @@ function IntroPage() {
           style={{
             width: "100%",
           }}
-          src="/test-notebook/assets/notebookBG.svg"
+          src="/homas-notebook/assets/notebookBG.svg"
           alt="notebookBG"
         />
         <div style={{ padding: "2rem" }}>
@@ -68,7 +68,7 @@ function IntroPage() {
           }}
         ></div>
         <img
-          src="/test-notebook/assets/rhombus.svg"
+          src="/homas-notebook/assets/rhombus.svg"
           style={{
             width: "15%",
           }}

@@ -1,8 +1,8 @@
 {
-  "name": "test-notebook",
+  "name": "homas-notebook",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://madorPele1.github.io/test-notebook",
+  "homepage": "https://madorPele1.github.io/homas-notebook",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +10,7 @@
     "deploy": "vite build && copy dist\\index.html dist\\404.html && npx gh-pages -d dist"
   },
   "dependencies": {
+    "@fontsource/heebo": "^5.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.0"
