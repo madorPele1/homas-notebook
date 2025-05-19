@@ -1,41 +1,118 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
-  { id: "gases", name: "Gases" },
-  { id: "liquids", name: "Liquids" },
-  { id: "solids", name: "Solids" },
-  { id: "corrosives", name: "Corrosives" },
-  { id: "toxics", name: "Toxics" },
-  { id: "oxidizers", name: "Oxidizers" },
-  { id: "flammables", name: "Flammables" },
-  { id: "reactives", name: "Reactives" },
+  'ניהול אירוע חומ"ס',
+  "שגרת חירום",
+  "הערכת סיכונים",
+  "סמכויות חוקיות",
+  "ניהול שגרה",
+  'סיווג חומ"ס',
+  "הגדרות ועזרים",
+  "חיפוש חומר",
 ];
 
-export default function HomePage() {
+function HomePage() {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const filtered = categories.filter((cat) =>
+    cat.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Welcome to Homas Notebook</h1>
-      <p>Select a category:</p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-        {categories.map((cat) => (
-          <Link
-            key={cat.id}
-            to={`/category/${cat.id}`}
+    <div>
+      <nav>
+        <img
+          style={{
+            width: "100%",
+            position: "absolute",
+            top: "-5%",
+          }}
+          src="src/assets/notebookBG.svg"
+          alt="notebookBG"
+        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <button
             style={{
-              padding: "1rem",
-              background: "#eee",
-              borderRadius: "0.5rem",
-              textDecoration: "none",
-              color: "#333",
-              minWidth: "100px",
-              textAlign: "center",
+              background: "transparent",
+              border: "transparent",
             }}
           >
-            {cat.name}
-          </Link>
+            <img
+              style={{
+                width: "30px",
+              }}
+              src="src/assets/ham-menu.svg"
+              alt="hamburger-menu"
+            />
+          </button>
+          <h1>פנקס החומ"ס</h1>
+          <img
+            src="src/assets/rhombus.svg"
+            style={{
+              width: "10%",
+              background: "white",
+              borderRadius: "100%",
+              padding: "1%",
+            }}
+            alt="rhombus"
+          />
+        </div>
+        <div
+          className="search-bar"
+          style={{
+            position: "relative",
+            width: "90%",
+            margin: "auto",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="הקלידו כאן לחיפוש..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{
+              width: "100%",
+              padding: "1rem",
+              fontFamily: "Heebo",
+              borderRadius: "5px",
+              borderColor: "transparent",
+              boxSizing: "border-box",
+            }}
+          />
+          <img
+            src="src/assets/magnifying-glass.svg"
+            alt="search icon"
+            style={{
+              position: "absolute",
+              left: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "20px",
+              height: "20px",
+            }}
+          />
+        </div>
+      </nav>
+      <div className="category-grid">
+        {filtered.map((cat) => (
+          <div
+            key={cat}
+            className="category-item"
+            onClick={() => navigate(`/category/${encodeURIComponent(cat)}`)}
+          >
+            {cat}
+          </div>
         ))}
       </div>
     </div>
   );
 }
+export default HomePage;

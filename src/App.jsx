@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import StartPage from './pages/StartPage';
 import IntroPage from './pages/IntroPage';
@@ -14,6 +13,7 @@ function App() {
       <Route path="/home" element={<HomePage />} />
       <Route path="/category/:categoryId" element={<CategoryPage />} />
       <Route path="/item/:categoryId/:itemId" element={<ItemPage />} />
+      <Route path="*" element={<div>Page Not Found</div>} />
     </Routes>
   );
 }

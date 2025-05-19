@@ -1,30 +1,75 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-export default function CategoryPage() {
+const sampleTopics = {
+ 'ניהול אירוע חומ"ס': [
+    "סדר פעולות של ק' חומ\"ס",
+    "הצגה למנהל הלחימה",
+    'מבנה פק"ל אופציות',
+    'הכרזה על אירוע חומ"ס במפקדות',
+    "בלעדיות המפקדות",
+    "אמצעי מיגון אישי",
+    "יכולות גדודי חילוץ במילואים",
+  ],
+  "שגרת חירום": [
+    "מעבר משגרה מחירום",
+    'גיבוש תמונת מצב חומ"ס',
+    'ניהול שינוע חומ"ס',
+  ],
+  "הערכת סיכונים": [
+    'הנחות עבודה לביצוע הע"ס נצורה',
+    'הע"ס נצורה לחומרים רעילים – ברירות מחדל כלליות',
+    'הע"ס נצורה לחומרים רעילים – ברירות מחדל לפי תרחיש',
+    "מדדי סיכון עבור נוזלים רעילים נפוצים",
+    'הע"ס נצורה לחומרים דליקים ונפיצים – ברירות מחדל לפי תרחיש',
+  ],
+  "סמכויות חוקיות": [
+    "חומרים מסוכנים בחקיקה ראשית ומשנית",
+    "כללים ליישום תקנות דרכי החסנה",
+    'דרישות פיקוד העורף ממחזיקי חומ"ס',
+  ],
+  "ניהול שגרה": [
+    'תפקידי קצין חומ"ס', 
+    "ביקורות שגרה", 
+    "מיגון – דרישות בסיסיות"
+  ],
+  'סיווג חומ"ס': [
+    'קבוצות סיכון לפי או"מ',
+    "שילוט",
+    'חומרים בעלי פוטנציאל סיכון לאוכלוסייה לפי פקע"ר',
+    "רשימת חומרים פרטניים המוגדרים כבעלי פוטנציאל סיכון לאוכלוסייה",
+  ],
+  'הגדרות ועזרים': [
+    "הגדרות",
+    "תוכנות חיוניות"
+  ],
+};
+
+function CategoryPage() {
   const { categoryId } = useParams();
-  const [topics, setTopics] = useState([]);
-
-  useEffect(() => {
-    import(`../data/${categoryId}.json`)
-      .then((module) => setTopics(module.topics))
-      .catch(() => setTopics([]));
-  }, [categoryId]);
+  const navigate = useNavigate();
+  const topics = sampleTopics[categoryId] || [];
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>{categoryId.toUpperCase()}</h1>
-      {topics.length === 0 ? (
-        <p>No data found.</p>
-      ) : (
-        <ul>
-          {topics.map((topic) => (
-            <li key={topic.id}>
-              <strong>{topic.title}</strong>: {topic.description}
-            </li>
-          ))}
-        </ul>
-      )}
+    <div style={{ padding: "1rem" }}>
+      <h2>{categoryId}</h2>
+      <ul>
+        {topics.map((topic) => (
+          <li
+            key={topic}
+            onClick={() =>
+              navigate(
+                `/item/${encodeURIComponent(categoryId)}/${encodeURIComponent(
+                  topic
+                )}`
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
+            {topic}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+export default CategoryPage;
