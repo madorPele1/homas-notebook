@@ -8,7 +8,7 @@ function StartPage() {
         style={{
           width: "100%",
         }}
-        src="src/assets/notebookBG.svg"
+        src="/test-notebook/assets/notebookBG.svg"
         alt="notebookBG"
       />
       <div
@@ -61,7 +61,7 @@ function StartPage() {
           }}
         ></div>
         <img
-          src="src/assets/rhombus.svg"
+          src="/test-notebook/assets/rhombus.svg"
           style={{
             width: "15%",
           }}

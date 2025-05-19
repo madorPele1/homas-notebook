@@ -15,7 +15,7 @@ function IntroPage() {
           style={{
             width: "100%",
           }}
-          src="src/assets/notebookBG.svg"
+          src="/test-notebook/assets/notebookBG.svg"
           alt="notebookBG"
         />
         <div style={{ padding: "2rem" }}>
@@ -35,11 +35,12 @@ function IntroPage() {
             }}
           ></div>
           <p>
-            אינני יודע מה המתכון לתפקוד מיטבי של ק' חומ"ס, אבל בטח לא יזיק לפתוח פנקס נתונים תחילה.
+            אינני יודע מה המתכון לתפקוד מיטבי של ק' חומ"ס, אבל בטח לא יזיק לפתוח
+            פנקס נתונים תחילה.
           </p>
           <p>
-            פנקס נתונים לא מחליף את הספרות המקצועית העשירה בתחום החומרים המסוכנים
-            שנכתבה בפיקוד העורף.
+            פנקס נתונים לא מחליף את הספרות המקצועית העשירה בתחום החומרים
+            המסוכנים שנכתבה בפיקוד העורף.
           </p>
           <p>
             הפנקס נועד לתמצת ולהנגיש את המידע המקצועי, את הנהלים, את ההוראות
@@ -67,7 +68,7 @@ function IntroPage() {
           }}
         ></div>
         <img
-          src="src/assets/rhombus.svg"
+          src="/test-notebook/assets/rhombus.svg"
           style={{
             width: "15%",
           }}
