@@ -1,35 +1,91 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ItemRenderer from "../components/ItemRenderer";
-import loadData from "../data/loadData"; // utility that dynamically loads category data
+import loadData from "../data/loadData";
 
-function ItemPage() {
+function ItemPage({ modal }) {
   const { categoryId, itemId } = useParams();
+  const navigate = useNavigate();
+
   const decodedCategoryId = decodeURIComponent(categoryId);
   const decodedItemId = decodeURIComponent(itemId);
 
-  const topicData = loadData(decodedCategoryId); // returns the whole category JSON
-  const item = topicData[decodedItemId]; // grab one topic from the category
+  const topicData = loadData(decodedCategoryId);
+  const item = topicData[decodedItemId];
 
   if (!item) {
     return <div style={{ padding: "2rem" }}>⚠️ הפריט לא נמצא.</div>;
   }
 
+  const handleClose = () => {
+    navigate(-1); // Go back to CategoryPage
+  };
+
   return (
     <div
       style={{
-        position: "fixed",
-        top: "5%",
-        left: "5%",
-        right: "5%",
-        bottom: "5%",
-        backgroundColor: "white",
-        border: "2px solid #000",
-        padding: "1rem",
+        position: modal ? "fixed" : "relative",
+        top: modal ? "0" : "auto",
+        left: modal ? "0" : "auto",
+        width: modal ? "100vw" : "auto",
+        height: modal ? "100vh" : "auto",
+        background: modal ? "rgba(0,0,0,0.5)" : "transparent",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: modal ? 1000 : "auto",
         overflow: "auto",
       }}
     >
-      <h2>{item.title}</h2>
-      <ItemRenderer components={item.components} />
+      <div
+        style={{
+          background: "white",
+          padding: "2rem",
+          borderRadius: "25px",
+          maxWidth: "900px",
+          width: "90%",
+          maxHeight: "90vh",
+          overflowY: "auto",
+          position: "relative",
+          margin: "3%"
+        }}
+      >
+        {modal && (
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                backgroundColor: "grey",
+                color: "white",
+                borderRadius: "20px",
+                padding: "5%",
+                textAlign: "center",
+                fontSize: "1rem",
+                gap: "7%"
+              }}
+            >
+              <button
+                onClick={handleClose}
+                style={{
+                  fontSize: "1.2rem",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  border: "white solid",
+                  borderRadius: "100%",
+                  color: "white",
+                  padding: "1% 3% 2% 3%"
+                }}
+              >
+                ✖
+              </button>
+              <h2 style={{ margin: 0 }}>{item.title}</h2>
+            </div>
+          </div>
+        )}
+
+        <ItemRenderer components={item.components} />
+      </div>
     </div>
   );
 }

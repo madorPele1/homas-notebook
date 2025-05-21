@@ -10,6 +10,8 @@ const categories = [
   'סיווג חומ"ס',
   "הגדרות ועזרים",
   "חיפוש חומר",
+  "מחשבון דון",
+  "אתר שימור ידע"
 ];
 
 function HomePage() {
@@ -46,9 +48,7 @@ function HomePage() {
             }}
           >
             <img
-              style={{
-                width: "30px",
-              }}
+              style={{ width: "30px" }}
               src="/homas-notebook/assets/ham-menu.svg"
               alt="hamburger-menu"
             />
@@ -101,13 +101,19 @@ function HomePage() {
           />
         </div>
       </nav>
+
       <div className="category-grid">
-        {filtered.map((cat) => (
+        {filtered.map((cat, index) => (
           <div
             key={cat}
             className="category-item"
             onClick={() => navigate(`/category/${encodeURIComponent(cat)}`)}
           >
+            <img
+              src={`/homas-notebook/assets/category-items/${index + 1}.svg`}
+              alt={`icon for ${cat}`}
+              style={{ width: "60px", marginBottom: "0.5rem" }}
+            />
             {cat}
           </div>
         ))}
@@ -115,4 +121,5 @@ function HomePage() {
     </div>
   );
 }
+
 export default HomePage;
