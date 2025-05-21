@@ -1,6 +1,7 @@
 import TextBlock from "./TextBlock";
 import ImageBlock from "./ImageBlock";
 import TableBlock from "./TableBlock";
+import ChecklistTableBlock from "./ChecklistTableBlock";
 
 function ItemRenderer({ components }) {
   return components.map((block, i) => {
@@ -11,6 +12,14 @@ function ItemRenderer({ components }) {
         return <ImageBlock key={i} src={block.src} alt={block.alt} />;
       case "table":
         return <TableBlock key={i} headers={block.headers} rows={block.rows} />;
+      case "checklistTable":
+        return (
+          <ChecklistTableBlock
+            key={i}
+            headers={block.headers}
+            rows={block.rows}
+          />
+        );
       default:
         return null;
     }

@@ -1,4 +1,4 @@
 function TextBlock({ content }) {
-  return <p>{content}</p>;
+  return <p style={{margin: "4%"}}>{content}</p>;
 }
 export default TextBlock;

@@ -39,7 +39,7 @@ function ItemPage({ modal }) {
       <div
         style={{
           background: "white",
-          padding: "2rem",
+          padding: "1rem",
           borderRadius: "25px",
           maxWidth: "900px",
           width: "90%",

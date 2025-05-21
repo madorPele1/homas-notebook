@@ -60,3 +60,79 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+/* checkbox && table */
+table {
+  border-collapse: separate;
+  border-spacing: 8px;
+  width: 100%;
+  direction: rtl;
+  border: 1px rgb(88, 182, 192);
+  font-size: 1rem;
+}
+.table-header {
+  background: rgb(88, 182, 192);
+  color: white;
+  font-weight: bold;
+}
+td {
+  font-weight: 100;
+}
+td,
+th {
+  border-radius: 5px;
+  border: 2px solid rgb(88, 182, 192);
+  text-align: center;
+}
+.no-border {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+.checkbox-container {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #58b6c0;
+  border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #58b6c0;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
