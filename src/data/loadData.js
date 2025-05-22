@@ -6,6 +6,8 @@ import routine from "./topics/routine.json";
 import classification from "./topics/classification.json";
 import definitions from "./topics/definitions.json";
 import search from "./topics/search.json";
+import calculator from "./topics/calculator.json";
+import knowledge from "./topics/knowledge.json";
 
 const map = {
   'ניהול אירוע חומ"ס': management,
@@ -16,6 +18,19 @@ const map = {
   'סיווג חומ"ס': classification,
   "הגדרות ועזרים": definitions,
   "חיפוש חומר": search,
+  "מחשבון דון": calculator,
+  "אתר שימור ידע": knowledge,
+};
+
+export const categoryColors = {
+  'ניהול אירוע חומ"ס': "#2683C6",
+  "שגרת חירום": "#7A8C8E",
+  "הערכת סיכונים": "#84ACB6",
+  "סמכויות חוקיות": "#58B6C0",
+  "ניהול שגרה": "#75BDA7",
+  'סיווג חומ"ס': "#3494BA",
+  "הגדרות ועזרים": "#008C95",
+  "חיפוש חומר": "#6C757D",
 };
 
 export default function loadData(categoryId) {

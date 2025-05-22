@@ -5,7 +5,7 @@ function IntroPage() {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        minHeight: "100svh",
         display: "flex",
         flexDirection: "column",
       }}

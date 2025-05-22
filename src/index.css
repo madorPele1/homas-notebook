@@ -1,5 +1,4 @@
 body {
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
   background: #f9f9f9;
@@ -61,6 +60,17 @@ h1 {
   justify-content: center;
 }
 
+.item-title {
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  border-radius: 20px;
+  padding: 5%;
+  text-align: center;
+  font-size: 1rem;
+  gap: 7%;
+}
+
 /* checkbox && table */
 table {
   border-collapse: separate;
@@ -74,6 +84,8 @@ table {
   background: rgb(88, 182, 192);
   color: white;
   font-weight: bold;
+  position: sticky;
+    top: -2%;
 }
 td {
   font-weight: 100;
@@ -135,4 +147,15 @@ th {
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+/* content switch */
+.content-switch-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
 }

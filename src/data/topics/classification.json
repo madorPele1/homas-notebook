@@ -3,17 +3,9 @@
     "title": "קבוצות סיכון לפי או\"מ",
     "components": [
       {
-        "type": "text",
-        "content": "או\"מ מחלק את החומרים המסוכנים לקבוצות סיכון בהתאם לסכנה העיקרית שלהם."
-      },
-      {
-        "type": "table",
-        "headers": ["קבוצה", "סוג החומר"],
-        "rows": [
-          ["1", "חומרים נפיצים"],
-          ["2", "גזים"],
-          ["3", "נוזלים דליקים"]
-        ]
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   },
@@ -22,12 +14,28 @@
     "components": [
       {
         "type": "image",
-        "src": "/images/hazard-signs.png",
-        "alt": "סוגי שילוט"
-      },
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
+      }
+    ]
+  },
+  "חומרים בעלי פוטנציאל סיכון לאוכלוסייה לפי פקע\"ר": {
+    "title": "חומרים בעלי פוטנציאל סיכון לאוכלוסייה לפי פקע\"ר",
+    "components": [
       {
-        "type": "text",
-        "content": "השילוט מחייב בהתאם לתקנות, ומספק מידע קריטי למגיבים ראשונים."
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
+      }
+    ]
+  },
+  "רשימת חומרים פרטניים המוגדרים כבעלי פוטנציאל סיכון לאוכלוסייה": {
+    "title": "רשימת חומרים פרטניים המוגדרים כבעלי פוטנציאל סיכון לאוכלוסייה",
+    "components": [
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   }

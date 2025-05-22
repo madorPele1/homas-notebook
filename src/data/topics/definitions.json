@@ -3,8 +3,9 @@
     "title": "הגדרות",
     "components": [
       {
-        "type": "text",
-        "content": "חומ\"ס – חומר מסוכן. חירום חומ\"ס – אירוע הכולל פוטנציאל סיכון מהותי לבריאות הציבור או לסביבה."
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   },
@@ -12,13 +13,9 @@
     "title": "תוכנות חיוניות",
     "components": [
       {
-        "type": "text",
-        "content": "ALOHA, CAMEO, MARPLOT הן מערכות תומכות בהחלטה לניהול אירועי חומ\"ס."
-      },
-      {
         "type": "image",
-        "src": "/images/software-suite.png",
-        "alt": "כלי תוכנה"
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   }

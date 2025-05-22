@@ -3,8 +3,19 @@
     "title": "תפקידי קצין חומ\"ס",
     "components": [
       {
-        "type": "text",
-        "content": "הקצין אחראי על פיקוח, הדרכה, ביקורת ובניית תכניות פעולה."
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
+      }
+    ]
+  },
+  "ביקורות שגרה": {
+    "title": "ביקורות שגרה",
+    "components": [
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   },
@@ -12,13 +23,9 @@
     "title": "מיגון – דרישות בסיסיות",
     "components": [
       {
-        "type": "table",
-        "headers": ["רכיב", "דרישה"],
-        "rows": [
-          ["מחסן חומ\"ס", "איוורור תקני"],
-          ["שילוט", "ברור, בולט ונראה לעין"],
-          ["גישה", "נתיב גישה ישיר לרכב חירום"]
-        ]
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   }

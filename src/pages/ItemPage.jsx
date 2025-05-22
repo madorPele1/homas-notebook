@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import ItemRenderer from "../components/ItemRenderer";
-import loadData from "../data/loadData";
+import loadData, { categoryColors } from "../data/loadData";
 
 function ItemPage({ modal }) {
   const { categoryId, itemId } = useParams();
@@ -11,13 +11,14 @@ function ItemPage({ modal }) {
 
   const topicData = loadData(decodedCategoryId);
   const item = topicData[decodedItemId];
+  const categoryColor = categoryColors[decodedCategoryId] || "#999";
 
   if (!item) {
     return <div style={{ padding: "2rem" }}>⚠️ הפריט לא נמצא.</div>;
   }
 
   const handleClose = () => {
-    navigate(-1); // Go back to CategoryPage
+    navigate(-1);
   };
 
   return (
@@ -27,7 +28,7 @@ function ItemPage({ modal }) {
         top: modal ? "0" : "auto",
         left: modal ? "0" : "auto",
         width: modal ? "100vw" : "auto",
-        height: modal ? "100vh" : "auto",
+        height: modal ? "100svh" : "auto",
         background: modal ? "rgba(0,0,0,0.5)" : "transparent",
         display: "flex",
         justifyContent: "center",
@@ -43,38 +44,28 @@ function ItemPage({ modal }) {
           borderRadius: "25px",
           maxWidth: "900px",
           width: "90%",
-          maxHeight: "90vh",
+          maxHeight: "90svh",
           overflowY: "auto",
           position: "relative",
-          margin: "3%"
+          margin: "3%",
         }}
       >
         {modal && (
           <div>
             <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                backgroundColor: "grey",
-                color: "white",
-                borderRadius: "20px",
-                padding: "5%",
-                textAlign: "center",
-                fontSize: "1rem",
-                gap: "7%"
-              }}
+              className="item-title"
+              style={{backgroundColor: categoryColor }}
             >
               <button
                 onClick={handleClose}
                 style={{
                   fontSize: "1.2rem",
                   background: "transparent",
-                  border: "none",
                   cursor: "pointer",
                   border: "white solid",
                   borderRadius: "100%",
                   color: "white",
-                  padding: "1% 3% 2% 3%"
+                  padding: "1% 3% 2% 3%",
                 }}
               >
                 ✖
@@ -84,7 +75,7 @@ function ItemPage({ modal }) {
           </div>
         )}
 
-        <ItemRenderer components={item.components} />
+        <ItemRenderer components={item.components} color={categoryColor} />
       </div>
     </div>
   );

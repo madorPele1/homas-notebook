@@ -3,8 +3,19 @@
     "title": "חומרים מסוכנים בחקיקה ראשית ומשנית",
     "components": [
       {
-        "type": "text",
-        "content": "חקיקה ראשית קובעת את המסגרת הכללית. החקיקה המשנית מפרטת תקנות וביצוע בפועל."
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
+      }
+    ]
+  },
+  "כללים ליישום תקנות דרכי החסנה": {
+    "title": "כללים ליישום תקנות דרכי החסנה",
+    "components": [
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   },
@@ -12,13 +23,9 @@
     "title": "דרישות פיקוד העורף ממחזיקי חומ\"ס",
     "components": [
       {
-        "type": "text",
-        "content": "בין הדרישות: הצבת שילוט ברור, אחסון לפי תקן, דיווח על אירועים חריגים, ותרגול תקופתי."
-      },
-      {
         "type": "image",
-        "src": "/images/homefront-requirements.png",
-        "alt": "דרישות פקע\"ר"
+        "src": "/homas-notebook/assets/sign.png",
+        "alt": "sign"
       }
     ]
   }
