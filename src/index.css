@@ -159,3 +159,57 @@ th {
   font-weight: 700;
   font-size: 1.2rem;
 }
+
+/* selectTable */
+.select-table {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  max-width: 600px;
+}
+
+.select-table-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.select-table-dropdown {
+  width: 100%;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.select-table-dropdown:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.select-table-description {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.select-table-dropdown option {
+  background: white;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem;
+}

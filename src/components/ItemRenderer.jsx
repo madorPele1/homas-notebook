@@ -3,9 +3,9 @@ import ImageBlock from "./ImageBlock";
 import TableBlock from "./TableBlock";
 import ChecklistTableBlock from "./ChecklistTableBlock";
 import ContentSwitcher from "./ContentSwitcher";
+import SelectTable from "./SelectTable";
 
 function ItemRenderer({ components, color }) {
-  // You can later pass `color` to specific blocks as needed
   return components.map((block, i) => {
     switch (block.type) {
       case "text":
@@ -17,12 +17,13 @@ function ItemRenderer({ components, color }) {
       case "checklistTable":
         return <ChecklistTableBlock key={i} headers={block.headers} rows={block.rows} color={color} />;
       case "contentSwitch":
-        return <ContentSwitcher key={i} options={block.options} color={color}/>;
+        return <ContentSwitcher key={i} options={block.options} color={color} />;
+      case "selectTable":
+        return <SelectTable key={i} title={block.title} placeholder={block.placeholder} options={block.options} color={color} />;
       default:
         return null;
     }
   });
 }
-
 
 export default ItemRenderer;
