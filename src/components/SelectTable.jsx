@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function SelectTable({ title, placeholder, options }) {
+function SelectTable({ title, columnTitles, placeholder, options }) {
   const [selected, setSelected] = useState(null);
 
   const handleChange = (e) => {
@@ -11,6 +11,7 @@ function SelectTable({ title, placeholder, options }) {
   return (
     <div className="select-table">
       {title && <h2 className="select-table-title">{title}</h2>}
+
       <select className="select-table-dropdown" onChange={handleChange} defaultValue="">
         <option value="" disabled>{placeholder}</option>
         {options.map((opt, i) => (
@@ -19,8 +20,24 @@ function SelectTable({ title, placeholder, options }) {
       </select>
 
       {selected && (
-        <div className="select-table-description">
-          <p>{selected.description}</p>
+        <div className="select-table-result">
+          <table className="select-table-table">
+            <thead>
+              <tr>
+                {columnTitles.map((col, i) => (
+                  <th key={i}>{col}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {selected.columns
+                  ? selected.columns.map((val, i) => <td key={i}>{val}</td>)
+                  : <td colSpan={columnTitles.length}>{selected.description}</td>
+                }
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
     </div>

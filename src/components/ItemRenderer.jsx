@@ -19,7 +19,7 @@ function ItemRenderer({ components, color }) {
       case "contentSwitch":
         return <ContentSwitcher key={i} options={block.options} color={color} />;
       case "selectTable":
-        return <SelectTable key={i} title={block.title} placeholder={block.placeholder} options={block.options} color={color} />;
+        return <SelectTable key={i} title={block.title} columnTitles={block.columnTitles} placeholder={block.placeholder} options={block.options} color={color} />;
       default:
         return null;
     }
