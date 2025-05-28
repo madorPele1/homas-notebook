@@ -1,12 +1,12 @@
 import React from "react";
 
-function TableBlock({ headers, rows, linkColumns = [] }) {
+function TableBlock({ headers, rows, color, linkColumns = [] }) {
   return (
     <table border="1" cellPadding="8">
       <thead>
         <tr>
           {headers.map((h, i) => (
-            <th className="table-header" key={i}>
+            <th className="table-header" style={{backgroundColor: color, borderColor: color}} key={i}>
               {h}
             </th>
           ))}
@@ -24,7 +24,7 @@ function TableBlock({ headers, rows, linkColumns = [] }) {
               ) {
                 const { content, colSpan, rowSpan, url } = cell;
                 return (
-                  <td
+                  <td style={{borderColor: color}}
                     key={j}
                     colSpan={colSpan || undefined}
                     rowSpan={rowSpan || undefined}
@@ -41,7 +41,7 @@ function TableBlock({ headers, rows, linkColumns = [] }) {
               }
 
               // Regular primitive value
-              return <td key={j}>{cell}</td>;
+              return <td style={{borderColor: color}} key={j}>{cell}</td>;
             })}
           </tr>
         ))}

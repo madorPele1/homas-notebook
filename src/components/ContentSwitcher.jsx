@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ChecklistTableBlock from "./ChecklistTableBlock";
-import TableBlock from "./TableBlock"; 
-import TextBlock from "./TextBlock"; 
+import TableBlock from "./TableBlock";
+import TextBlock from "./TextBlock";
 
 function ContentSwitcher({ options, color }) {
   const optionKeys = Object.keys(options);
@@ -29,7 +29,8 @@ function ContentSwitcher({ options, color }) {
             onClick={() => setSelected(key)}
             className="content-switch-btn"
             style={{
-              backgroundColor: selected === key ? "rgb(109 107 107)" : "rgb(192 192 192)",
+              backgroundColor:
+                selected === key ? "rgb(109 107 107)" : "rgb(192 192 192)",
             }}
           >
             {key}
@@ -47,13 +48,21 @@ function ContentSwitcher({ options, color }) {
                   key={i}
                   headers={block.headers}
                   rows={block.rows}
+                  color={color}
                 />
               );
             case "text":
-              return <TextBlock key={i} content={block.content} />;
+              return (
+                <TextBlock key={i} content={block.content} color={color} />
+              );
             case "table":
               return (
-                <TableBlock key={i} headers={block.headers} rows={block.rows} />
+                <TableBlock
+                  key={i}
+                  headers={block.headers}
+                  rows={block.rows}
+                  color={color}
+                />
               );
             default:
               return null;

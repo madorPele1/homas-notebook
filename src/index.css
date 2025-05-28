@@ -77,11 +77,10 @@ table {
   font-size: 1rem;
 }
 .table-header {
-  background: rgb(88, 182, 192);
   color: white;
   font-weight: bold;
   position: sticky;
-    top: -2%;
+  top: -2%;
 }
 td {
   font-weight: 100;
@@ -89,7 +88,7 @@ td {
 td,
 th {
   border-radius: 5px;
-  border: 2px solid rgb(88, 182, 192);
+  border: 2px solid;
   text-align: center;
 }
 .no-border {
@@ -222,4 +221,60 @@ th {
   padding: 0.75rem;
   border: 1px solid #ccc;
   text-align: center;
+}
+
+/* CollapsibleSections */
+.collapsible-container {
+  max-width: 600px;
+  margin: 10px;
+}
+
+.section {
+  margin-bottom: 1rem;
+}
+
+.section-btn {
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+    z-index: 1;
+}
+
+.sub-items {
+  padding: 30px 10px 10px 10px;
+  border-radius: 20px;
+  position: relative;
+  top: -33px;
+  z-index: 0;
+}
+
+.sub-item-btn {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px 16px;
+  margin: 6px 0 0;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sub-item-btn:hover {
+  background-color: #ddd;
+}
+
+.sub-item-content {
+  background-color: #fafafa;
+  border-right: 3px solid;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.icon {
+  margin-right: 8px;
 }

@@ -4,6 +4,7 @@ import TableBlock from "./TableBlock";
 import ChecklistTableBlock from "./ChecklistTableBlock";
 import ContentSwitcher from "./ContentSwitcher";
 import SelectTable from "./SelectTable";
+import CollapsibleSections from "./CollapsibleSections";
 
 function ItemRenderer({ components, color }) {
   return components.map((block, i) => {
@@ -13,13 +14,48 @@ function ItemRenderer({ components, color }) {
       case "image":
         return <ImageBlock key={i} src={block.src} alt={block.alt} />;
       case "table":
-        return <TableBlock key={i} headers={block.headers} rows={block.rows} linkColumns={block.linkColumns} color={color} />;
+        return (
+          <TableBlock
+            key={i}
+            headers={block.headers}
+            rows={block.rows}
+            linkColumns={block.linkColumns}
+            color={color}
+          />
+        );
       case "checklistTable":
-        return <ChecklistTableBlock key={i} headers={block.headers} rows={block.rows} color={color} />;
+        return (
+          <ChecklistTableBlock
+            key={i}
+            headers={block.headers}
+            rows={block.rows}
+            color={color}
+          />
+        );
       case "contentSwitch":
-        return <ContentSwitcher key={i} options={block.options} color={color} />;
+        return (
+          <ContentSwitcher key={i} options={block.options} color={color} />
+        );
       case "selectTable":
-        return <SelectTable key={i} title={block.title} columnTitles={block.columnTitles} placeholder={block.placeholder} options={block.options} color={color} />;
+        return (
+          <SelectTable
+            key={i}
+            title={block.title}
+            columnTitles={block.columnTitles}
+            placeholder={block.placeholder}
+            options={block.options}
+            color={color}
+          />
+        );
+      case "CollapsibleSections":
+        return (
+          <CollapsibleSections
+            key={block.id || i}
+            sections={block.sections}
+            color={color}
+          />
+        );
+
       default:
         return null;
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ChecklistTableBlock({ headers, rows }) {
+function ChecklistTableBlock({ headers, rows, color }) {
   // Flatten all steps to one list for checkboxes
   const totalSteps = rows.reduce((acc, row) => acc + row.steps.length, 0);
   const [checked, setChecked] = useState(Array(totalSteps).fill(false));
@@ -15,16 +15,14 @@ function ChecklistTableBlock({ headers, rows }) {
 
   return (
     <div>
-      <table
-        border="1"
-        cellPadding="8"
-      >
+      <table border="1" cellPadding="8">
         <thead>
           <tr>
             {headers.map((h, i) => (
               <th
+                className="table-header"
+                style={{ borderColor: color, backgroundColor: color }}
                 key={i}
-                className={i === 1 || i === 0 ? "no-border" : "table-header"} // assuming checkbox column is index 1
               >
                 {h}
               </th>
@@ -46,7 +44,11 @@ function ChecklistTableBlock({ headers, rows }) {
                 <tr key={rowKey}>
                   {/* Row header (merged only on first step) */}
                   {isFirst && (
-                    <td className="table-header" rowSpan={row.steps.length}>
+                    <td
+                      style={{ backgroundColor: color, borderColor: color }}
+                      className="table-header"
+                      rowSpan={row.steps.length}
+                    >
                       {row.header}
                     </td>
                   )}
@@ -54,23 +56,31 @@ function ChecklistTableBlock({ headers, rows }) {
                   {/* Action cell */}
 
                   {/* Checkbox */}
-                  <td className="no-border" style={{ textAlign: "center" }}>
+                  <td className="no-border">
                     <label className="checkbox-container">
                       <input
                         type="checkbox"
                         checked={checked[currentCheckIndex]}
                         onChange={() => toggleCheck(currentCheckIndex)}
                       />
-                      <span className="checkmark" />
+                      <span
+                        className="checkmark"
+                        style={{ borderColor: color }}
+                      />
                     </label>
                   </td>
 
-                  <td>{step[0]}</td>
+                  <td style={{ borderColor: color }}>{step[0]}</td>
                   {/* Info source cell */}
                   {showSource ? (
-                    <td rowSpan={step[1].rowSpan}>{step[1].text}</td>
+                    <td
+                      style={{ borderColor: color }}
+                      rowSpan={step[1].rowSpan}
+                    >
+                      {step[1].text}
+                    </td>
                   ) : step[1] && typeof step[1] === "string" ? (
-                    <td>{step[1]}</td>
+                    <td style={{ borderColor: color }}>{step[1]}</td>
                   ) : step[1] === null ? null : (
                     <td />
                   )}
