@@ -13,7 +13,7 @@ function ItemRenderer({ components, color }) {
       case "image":
         return <ImageBlock key={i} src={block.src} alt={block.alt} />;
       case "table":
-        return <TableBlock key={i} headers={block.headers} rows={block.rows} color={color} />;
+        return <TableBlock key={i} headers={block.headers} rows={block.rows} linkColumns={block.linkColumns} color={color} />;
       case "checklistTable":
         return <ChecklistTableBlock key={i} headers={block.headers} rows={block.rows} color={color} />;
       case "contentSwitch":
