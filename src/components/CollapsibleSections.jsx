@@ -6,7 +6,7 @@ function CollapsibleSections({ sections, color }) {
 
   const toggleSection = (index) => {
     setOpenSection(openSection === index ? null : index);
-    setOpenSubItem({}); // Reset subitems when switching section
+    setOpenSubItem({});
   };
 
   const toggleSubItem = (sectionIndex, itemIndex) => {
@@ -17,11 +17,19 @@ function CollapsibleSections({ sections, color }) {
     }));
   };
 
+  const renderWithLineBreaks = (text) => {
+    return text?.split("\n").map((part, idx) => (
+      <React.Fragment key={idx}>
+        {part}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   if (!Array.isArray(sections)) {
     console.warn("CollapsibleSections: 'sections' prop is not an array.");
     return null;
   }
-
   return (
     <div className="collapsible-container">
       {sections.map((section, secIdx) => (
@@ -36,12 +44,22 @@ function CollapsibleSections({ sections, color }) {
 
           {openSection === secIdx && (
             <div style={{ backgroundColor: color }} className="sub-items">
-              {Array.isArray(section.items) ? (
+              {/* Pre-content (above items) */}
+              {section.preContent && (
+                <div className="sub-item flat-content">
+                  {renderWithLineBreaks(section.preContent)}
+                </div>
+              )}
+
+              {/* Items (if present) */}
+              {Array.isArray(section.items) &&
                 section.items.map((item, itemIdx) => {
                   const isOpen = openSubItem[`${secIdx}-${itemIdx}`];
                   return (
                     <div
-                      key={item.id || `${section.title}-${item.title}` || itemIdx}
+                      key={
+                        item.id || `${section.title}-${item.title}` || itemIdx
+                      }
                       className="sub-item"
                     >
                       <button
@@ -52,13 +70,29 @@ function CollapsibleSections({ sections, color }) {
                         {item.title}
                       </button>
                       {isOpen && (
-                        <div className="sub-item-content">{item.content}</div>
+                        <div className="sub-item-content">
+                          {item.image && (
+                            <img
+                              src={item.image}
+                              alt=""
+                              className="section-image"
+                            />
+                          )}
+                          {renderWithLineBreaks(item.content)}
+                        </div>
                       )}
                     </div>
                   );
-                })
-              ) : (
-                <div className="sub-item flat-content">{section.content}</div>
+                })}
+
+              {/* Post-content (below items) */}
+              {(section.postContent || section.image) && (
+                <div className="sub-item flat-content">
+                  {section.image && (
+                    <img src={section.image} alt="" className="section-image" />
+                  )}
+                  {renderWithLineBreaks(section.postContent)}
+                </div>
               )}
             </div>
           )}

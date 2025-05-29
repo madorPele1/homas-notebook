@@ -237,12 +237,25 @@ th {
   color: white;
   border: none;
   padding: 12px 20px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
   cursor: pointer;
   width: 100%;
   border-radius: 20px;
   position: relative;
-    z-index: 1;
+  z-index: 1;
+  font-family: "Heebo";
+  background-color: inherit;
+  overflow: hidden;
+}
+/* Pseudo-element overlay to darken the background */
+.section-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: -1;
 }
 
 .sub-items {
@@ -261,6 +274,7 @@ th {
   width: 100%;
   font-size: 1rem;
   cursor: pointer;
+  font-family: "Heebo";
 }
 
 .sub-item-btn:hover {
@@ -277,4 +291,11 @@ th {
 
 .icon {
   margin-right: 8px;
+}
+
+.flat-content {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 5% 2% 2%;
 }
