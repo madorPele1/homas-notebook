@@ -5,6 +5,7 @@ import ChecklistTableBlock from "./ChecklistTableBlock";
 import ContentSwitcher from "./ContentSwitcher";
 import SelectTable from "./SelectTable";
 import CollapsibleSections from "./CollapsibleSections";
+import CalculatorBlock from "./CalculatorBlock";
 
 function ItemRenderer({ components, color }) {
   return components.map((block, i) => {
@@ -47,11 +48,21 @@ function ItemRenderer({ components, color }) {
             color={color}
           />
         );
-      case "CollapsibleSections":
+      case "collapsibleSections":
         return (
           <CollapsibleSections
             key={block.id || i}
             sections={block.sections}
+            color={color}
+          />
+        );
+
+      case "calculator":
+        return (
+          <CalculatorBlock
+            key={i}
+            UVCEData={block.UVCEData}
+            BLEVEData={block.BLEVEData}
             color={color}
           />
         );

@@ -45,7 +45,6 @@ function ItemPage({ modal }) {
           maxWidth: "900px",
           width: "90%",
           maxHeight: "90svh",
-          overflowY: "auto",
           position: "relative",
           margin: "3%",
         }}

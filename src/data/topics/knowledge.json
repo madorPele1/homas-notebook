@@ -3,9 +3,24 @@
     "title":   "אתר שימור ידע",
     "components": [
       {
-        "type": "image",
-        "src": "/homas-notebook/assets/sign.png",
-        "alt": "sign"
+        "type": "text",
+        "content": "אתר שימור ידע"
+      },
+      {
+        "type": "text",
+        "content": "ענף חומ\"ס"
+      },
+      {
+        "type": "text",
+        "content": "https://tikshuv.sharepoint.com/sites/-Migonhomas/SitePages/CollabHome.aspx"
+      },
+      {
+        "type": "text",
+        "content": "08-9783823"
+      },
+      {
+        "type": "text",
+        "content": "merkazhomas@gmail.com"
       }
     ]
   }
