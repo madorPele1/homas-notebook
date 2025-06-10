@@ -6,6 +6,7 @@ import ContentSwitcher from "./ContentSwitcher";
 import SelectTable from "./SelectTable";
 import CollapsibleSections from "./CollapsibleSections";
 import CalculatorBlock from "./CalculatorBlock";
+import MaterialFilter from "./MaterialFilter";
 
 function ItemRenderer({ components, color }) {
   return components.map((block, i) => {
@@ -63,6 +64,15 @@ function ItemRenderer({ components, color }) {
             key={i}
             UVCEData={block.UVCEData}
             BLEVEData={block.BLEVEData}
+            color={color}
+          />
+        );
+
+      case "materialFilter":
+        return (
+          <MaterialFilter
+            key={i}
+            components={components.slice(i + 1)}
             color={color}
           />
         );

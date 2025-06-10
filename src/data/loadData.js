@@ -8,6 +8,7 @@ import definitions from "./topics/definitions.json";
 import search from "./topics/search.json";
 import calculator from "./topics/calculator.json";
 import knowledge from "./topics/knowledge.json";
+import materials from "./topics/materials.json";
 
 const map = {
   'ניהול אירוע חומ"ס': management,
@@ -20,6 +21,7 @@ const map = {
   "חיפוש חומר": search,
   "מחשבון דון": calculator,
   "אתר שימור ידע": knowledge,
+  "חיפוש חומר": materials,
 };
 
 export const categoryColors = {
@@ -30,7 +32,9 @@ export const categoryColors = {
   "ניהול שגרה": "#75BDA7",
   'סיווג חומ"ס': "#3494BA",
   "הגדרות ועזרים": "#008C95",
+  "מחשבון דון": "#1C257D",
   "חיפוש חומר": "#6C757D",
+  "אתר שימור ידע": "#8C757D",
 };
 
 export default function loadData(categoryId) {

@@ -230,7 +230,10 @@
       },
       {
         "type": "text",
-        "content": "זיכרו, ההכרזה על אירוע חומ\"ס, הפצת ההתרעה החוזרת / הייעודית והנחיות מצילות חיים מתבצעת ברמה פיקודית בלבד! יש להביא את המידע המלא ואת ההמלצה לרמה הפיקודית ללא דיחוי."
+        "content": {
+          "type": "title",
+          "text": "זיכרו, ההכרזה על אירוע חומ\"ס, הפצת ההתרעה החוזרת / הייעודית והנחיות מצילות חיים מתבצעת ברמה פיקודית בלבד! יש להביא את המידע המלא ואת ההמלצה לרמה הפיקודית ללא דיחוי."
+        }
       }
     ]
   },
@@ -284,9 +287,132 @@
     "title": "אמצעי מיגון אישי",
     "components": [
       {
+        "type": "contentSwitch",
+        "options": {
+          "רמה A": {
+            "title": "מעבר משגרה לחירום",
+            "components": [
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/boots.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
+                "alt": "gloves"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/ALevelSuit.svg",
+                "alt": "ALevelSuit"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/ALevelMask.svg",
+                "alt": "ALevelMask"
+              },
+              {
+                "type": "text",
+                "content": "איום נשימתי, עורי ועיני חמור (ריכוזים גבוהים, סכנת נתזים) או איום לא ידוע. הכלת מוקד / סריקות במבנה / דגימה ממקור"
+              }
+            ]
+          },
+          "רמה B": {
+            "title": "גיבוש תמונת מצב חומ\"ס",
+            "components": [
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/boots.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/BLevelSuit.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/BLevelMask.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "text",
+                "content": "איום עורי מתון ואיום נשימתי ועיני חמור או במחסור בחמצן. חילוץ נפגעים ממוקד וממבנה /  סריקות באזור חם"
+              }
+            ]
+          },
+          "רמה C": {
+            "title": "גיבוש תמונת מצב חומ\"ס",
+            "components": [
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/boots.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/CLevelSuit.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "image",
+                "src": "/homas-notebook/assets/protection-levels/CLevelMask.svg",
+                "alt": "boots"
+              },
+              {
+                "type": "text",
+                "content": "איום נשימתי, עורי ועיני מתון. חילוץ נפגעים בשטח פתוח / סריקות באזור פושר / ניטור לתיחום אזור חם"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "סוגי מסננים"
+        }
+      },
+      {
         "type": "image",
-        "src": "/homas-notebook/assets/sign.png",
-        "alt": "sign"
+        "src": "/homas-notebook/assets/filters-types.png",
+        "alt": "boots"
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "עמידות המסנן"
+        }
+      },
+      {
+        "type": "table",
+        "headers": [],
+        "rows": [
+          ["X₁", "ריכוזים נפחיים של עד 0.1%"],
+          ["X₂", "ריכוזים נפחיים של עד0.5% "],
+          ["X₃", "ריכוזים נפחיים של עד 1.0%"]
+        ]
+      },
+      {
+        "type": "text",
+        "content": "המסנן הקיים בערכת המגן האזרחית הינו מסוג A₁B₁E₁P₃"
+      },
+      {
+        "type": "text",
+        "content": "המסנן התעשייתי (ABEK) הינו מסוג A₂B₂E₂K₂P₃"
       }
     ]
   },
@@ -294,9 +420,75 @@
     "title": "יכולות גדודי חילוץ במילואים",
     "components": [
       {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "רמת מיגון C"
+        }
+      },
+      {
         "type": "image",
-        "src": "/homas-notebook/assets/sign.png",
-        "alt": "sign"
+        "src": "/homas-notebook/assets/protection-levels/boots.svg",
+        "alt": "boots"
+      },
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/protection-levels/gloves.svg",
+        "alt": "boots"
+      },
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/protection-levels/CLevelSuit.svg",
+        "alt": "boots"
+      },
+      {
+        "type": "image",
+        "src": "/homas-notebook/assets/protection-levels/CLevelMask.svg",
+        "alt": "boots"
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "משימות"
+        }
+      },
+      {
+        "type": "text",
+        "content": "פיקוד ושליטה (פו\"ש) חילוץ נפגעים בשטח פתוח בעדיפות מאזור פושר, מאזור חם רק בכפוף לשהייה קצרה  סריקות באזור פושר ע\"ר ופינוי נפגעים"
+      },
+      {
+        "type": "table",
+        "headers": ["מסגרת", "הערות"],
+        "rows": [
+          ["מפקדת הגדוד (מפג\"ד)", "מלא"],
+          ["מפקדה פלוגתית (מפל\"ג)", "שלוש מפקדות – 8 בע\"ת בכל פלוגה"],
+          ["מחלקה", "3 מחלקות -  מחלקה בכל פלוגה "],
+          ["פלוגת רפואה (פלר\"ג)", "3 מחלקות -  מחלקה בכל פלוגה "]
+        ]
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "הפניות"
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "link",
+          "text": "לומדת חומ\"ס לדרג הטקטי",
+          "url": "https://tinyurl.com/44zr3bsk"
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "link",
+          "text": "תפיסת ההפעלה המבצעית המשולבת",
+          "url": "https://tinyurl.com/44zr3bsk"
+        }
       }
     ]
   }

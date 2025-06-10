@@ -2,6 +2,7 @@ import { useState } from "react";
 import ChecklistTableBlock from "./ChecklistTableBlock";
 import TableBlock from "./TableBlock";
 import TextBlock from "./TextBlock";
+import ImageBlock from "./ImageBlock";
 
 function ContentSwitcher({ options, color }) {
   const optionKeys = Object.keys(options);
@@ -55,6 +56,8 @@ function ContentSwitcher({ options, color }) {
               return (
                 <TextBlock key={i} content={block.content} color={color} />
               );
+            case "image":
+              return <ImageBlock key={i} src={block.src} alt={block.alt} />;
             case "table":
               return (
                 <TableBlock

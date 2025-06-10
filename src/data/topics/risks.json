@@ -4,7 +4,10 @@
     "components": [
       {
         "type": "text",
-        "content": "הנחות עבודה לביצוע הע\"ס נצורה"
+        "content": {
+          "type": "title",
+          "text": "הנחות עבודה לביצוע הע\"ס נצורה"
+        }
       },
       {
         "type": "table",
@@ -31,7 +34,10 @@
       },
       {
         "type": "text",
-        "content": "מדדי סיכון (לעצב את הכותרת)"
+        "content": {
+          "type": "title",
+          "text": "מדדי סיכון"
+        }
       },
       {
         "type": "table",
@@ -53,7 +59,11 @@
       },
       {
         "type": "text",
-        "content": "תרגולת הערכת סיכונים (להוסיף קישור)"
+        "content": {
+          "type": "link",
+          "text": "תרגולת הערכת סיכונים",
+          "url": "https://tinyurl.com/3fzk3eac"
+        }
       }
     ]
   },
@@ -64,7 +74,7 @@
         "type": "selectTable",
         "title": "שדה בתוכנת ALOHA",
         "columnTitles": ["ערך ברירת מחדל להזנה"],
-        "placeholder": "בחר שדה...",
+        "placeholder": "בחרו שדה...",
         "options": [
           {
             "option": "מיקום",
@@ -154,7 +164,11 @@
       },
       {
         "type": "text",
-        "content": "לומדת הע\"ס באלוהה (להוסיף קישור)"
+        "content": {
+          "type": "link",
+          "text": "לומדת הע\"ס באלוהה ",
+          "url": "https://tinyurl.com/mr6bpp2e"
+        }
       }
     ]
   },
@@ -163,8 +177,8 @@
     "components": [
       {
         "type": "selectTable",
-        "title": "בחר נוזל רעיל",
-        "placeholder": "בחר חומר...",
+        "title": "בחרו נוזל רעיל",
+        "placeholder": "בחרו חומר...",
         "columnTitles": ["מספר או\"ם", "AEGL60-3 [ppm]", "AEGL60-2 [ppm]"],
         "options": [
           {
@@ -228,8 +242,8 @@
     "components": [
       {
         "type": "selectTable",
-        "title": "בחר גז רעיל",
-        "placeholder": "בחר חומר...",
+        "title": "בחרו גז רעיל",
+        "placeholder": "בחרו חומר...",
         "columnTitles": ["מספר או\"ם", "AEGL10-3 [ppm]", "AEGL10-2 [ppm]"],
         "options": [
           {
@@ -311,12 +325,15 @@
       },
       {
         "type": "text",
-        "content": "חומרים דליקים ונפיצים נפוצים בעלי פוטנציאל סיכון לאוכלוסייה"
+        "content": {
+          "type": "title",
+          "text": "חומרים דליקים ונפיצים נפוצים בעלי פוטנציאל סיכון לאוכלוסייה"
+        }
       },
       {
         "type": "selectTable",
-        "title": "בחר חומר",
-        "placeholder": "בחר חומר...",
+        "title": "בחרו חומר",
+        "placeholder": "בחרו חומר...",
         "columnTitles": ["מספר או\"ם", "AEGL10-3 [ppm]", "AEGL10-2 [ppm]"],
         "options": [
           {
@@ -355,7 +372,18 @@
       },
       {
         "type": "text",
-        "content": "מחשבון הע\"ס לחומרים דליקים ונפיצים (להוסיף קישור)"
+        "content": {
+          "type": "title",
+          "text": "הפניות"
+        }
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "link",
+          "text": "מחשבון הע\"ס לחומרים דליקים ונפיצים",
+          "url": "https://tinyurl.com/4n5nf44s"
+        }
       }
     ]
   }

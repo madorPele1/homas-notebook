@@ -47,6 +47,7 @@ function ItemPage({ modal }) {
           maxHeight: "90svh",
           position: "relative",
           margin: "3%",
+          overflowY: "auto"
         }}
       >
         {modal && (
