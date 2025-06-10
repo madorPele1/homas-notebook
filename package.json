@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/heebo": "^5.2.5",
+    "motion": "^12.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.0"

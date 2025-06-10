@@ -89,7 +89,7 @@ function CollapsibleSections({ sections, color }) {
               {(section.postContent || section.image) && (
                 <div className="sub-item flat-content">
                   {section.image && (
-                    <img src={section.image} alt="" className="section-image" />
+                    <img src={section.image} alt="" style={{width: "100%"}} className="section-image" />
                   )}
                   {renderWithLineBreaks(section.postContent)}
                 </div>

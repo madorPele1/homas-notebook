@@ -1,4 +1,6 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const sampleTopics = {
   'ניהול אירוע חומ"ס': [
@@ -28,7 +30,12 @@ const sampleTopics = {
     "כללים ליישום תקנות דרכי החסנה",
     'דרישות פיקוד העורף ממחזיקי חומ"ס',
   ],
-  "ניהול שגרה": ['תפקידי קצין חומ"ס', "ביקורת שגרה – שלבים", "ביקורת שגרה – דגשים", "מיגון – דרישות בסיסיות"],
+  "ניהול שגרה": [
+    'תפקידי קצין חומ"ס',
+    "ביקורת שגרה – שלבים",
+    "ביקורת שגרה – דגשים",
+    "מיגון – דרישות בסיסיות",
+  ],
   'סיווג חומ"ס': [
     'קבוצות סיכון לפי או"מ',
     "שילוט",
@@ -38,104 +45,141 @@ const sampleTopics = {
   "הגדרות ועזרים": ["הגדרות", "תוכנות חיוניות"],
   "אתר שימור ידע": ["אתר שימור ידע"],
   "מחשבון דון": ["מחשבון דון"],
-  "חיפוש חומר": ["חיפוש חומר"]
+  "חיפוש חומר": ["חיפוש חומר"],
+};
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
 };
 
 function CategoryPage() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isVisible, setIsVisible] = useState(true);
+
   const topics = sampleTopics[categoryId] || [];
 
+  const handleHomeClick = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      navigate("../home");
+    }, 300); // Match the duration of exit animation
+  };
+
   return (
-    <div>
-      <nav>
-        <img
-          style={{
-            width: "100%",
-            position: "absolute",
-            top: "-5%",
-          }}
-          src="/homas-notebook/assets/notebookBG.svg"
-          alt="notebookBG"
-        />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            marginTop: "10px",
-          }}
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          key="category-page"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <button
-            style={{
-              background: "transparent",
-              border: "transparent",
-            }}
-            onClick={() =>
-              navigate("../home")
-            }
-          >
+          <nav>
             <img
-              style={{ width: "44px" }}
-              src="/homas-notebook/assets/home-icon.svg"
-              alt="home-icon"
+              style={{
+                width: "100%",
+                position: "absolute",
+                top: "-5%",
+                zIndex: 1,
+              }}
+              src="/homas-notebook/assets/notebookBG.svg"
+              alt="notebookBG"
             />
-          </button>
-          <h1>{categoryId}</h1>
-          <img
-            src="/homas-notebook/assets/back-icon.svg"
-            style={{
-              width: "6%",
-            }}
-            alt="rhombus"
-          />
-        </div>
-        <div
-          className="search-bar"
-          style={{
-            position: "relative",
-            width: "90%",
-            margin: "auto",
-          }}
-        ></div>
-      </nav>
-      <ul
-        style={{
-          padding: "4%",
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px",
-        }}
-      >
-        {topics.map((topic) => (
-          <li
-            className="list-item"
-            key={topic}
-            onClick={() =>
-              navigate(
-                `/item/${encodeURIComponent(categoryId)}/${encodeURIComponent(
-                  topic
-                )}`,
-                { state: { background: location } }
-              )
-            }
-          >
-            {topic}
             <div
               style={{
-                color: "white",
-                background: "#3cacae",
-                borderRadius: "50%",
-                padding: "1% 3% 0% 3%",
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+                marginTop: "10px",
               }}
             >
-              +
+              <button
+                style={{
+                  background: "transparent",
+                  border: "transparent",
+                }}
+                onClick={handleHomeClick}
+              >
+                <img
+                  style={{ width: "44px" }}
+                  src="/homas-notebook/assets/home-icon.svg"
+                  alt="home-icon"
+                />
+              </button>
+              <h1>{categoryId}</h1>
             </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </nav>
+
+          <motion.ul
+            variants={listVariants}
+            initial="hidden"
+            animate="visible"
+            style={{
+              padding: "4%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "15px",
+            }}
+          >
+            {topics.map((topic) => (
+              <motion.li
+                className="list-item"
+                key={topic}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "18px 20px",
+                  borderRadius: "30vh",
+                  backgroundColor: "#f4f4f4",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s ease",
+                }}
+                onClick={() =>
+                  navigate(
+                    `/item/${encodeURIComponent(
+                      categoryId
+                    )}/${encodeURIComponent(topic)}`,
+                    { state: { background: location } }
+                  )
+                }
+              >
+                {topic}
+                <div
+                  style={{
+                    color: "white",
+                    background: "#3cacae",
+                    borderRadius: "50%",
+                    padding: "1% 3% 0% 3%",
+                  }}
+                >
+                  +
+                </div>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
+
 export default CategoryPage;

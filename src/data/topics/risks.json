@@ -334,7 +334,7 @@
         "type": "selectTable",
         "title": "בחרו חומר",
         "placeholder": "בחרו חומר...",
-        "columnTitles": ["מספר או\"ם", "AEGL10-3 [ppm]", "AEGL10-2 [ppm]"],
+        "columnTitles": ["מספר או\"ם", "יח' סיכון לפיצוץ", "יח' סיכון כדור אש"],
         "options": [
           {
             "option": "אמוניום ניטראט טכני או חלקאי",
