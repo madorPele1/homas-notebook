@@ -14,31 +14,41 @@
         "headers": [],
         "rows": [
           [
-            "סוג חומר וכמות",
+            { "content": "סוג חומר וכמות", "highlight": true },
+
             "כמות מרבית במחזיק של החומר המייצר טווח סיכון הגדול ביותר, ללא התחשבות בתגובות המשך (אוויר, לחות וכדומה)"
           ],
           [
-            "מוקד פגיעה",
+            { "content": "מוקד פגיעה", "highlight": true },
+
             "רדיוס 50 מ' סביב נקודת הפגיעה של האמל\"ח – אתרי אחסון המרוחקים פחות מ-100 מ' אחד מהשני ייפגעו יחדיו"
           ],
           [
-            "הערכת נזק",
+            { "content": "הערכת נזק", "highlight": true },
+
             "גזים מונזלים בלחץ – באתר מוגן או בתרחיש BLEVE אריזה אחת הגדולה ביותר, אחרת – כלל האריזות המאוחסנות במוקד הפגיעה. מע' קירור עם אמוניה – שליש מתכולת המערכת או כל הכמות במיכל ריקון (לפי הגדול מביניהם)שאר החומרים – כלל האריזות המאוחסנות במוקד הפגיעה."
           ],
           [
-            "מטאורולוגיה",
+            { "content": "מטאורולוגיה", "highlight": true },
+
             "מצב יציבות E (יציב) ללא כיוון רוח מוגדר מראש – פיזור מעגלי"
           ],
-          ["רמת סיכון", "השפעות אקוטיות בלבד"]
+          [{ "content": "רמת סיכון", "highlight": true }, "השפעות אקוטיות בלבד"]
         ]
       },
       {
         "type": "text",
         "content": {
-          "type": "title",
-          "text": "מדדי סיכון"
+          "type": "link",
+          "text": "תרגולת הערכת סיכונים",
+          "url": "https://tinyurl.com/3fzk3eac"
         }
-      },
+      }
+    ]
+  },
+  "מדדי סיכון לשימוש": {
+    "title": "מדדי סיכון לשימוש",
+    "components": [
       {
         "type": "table",
         "headers": ["תרחיש", "אזור חם", "אזור פושר"],
@@ -56,14 +66,6 @@
           ],
           ["BLEVE", "1% מוות", "(1% מוות) *1.2"]
         ]
-      },
-      {
-        "type": "text",
-        "content": {
-          "type": "link",
-          "text": "תרגולת הערכת סיכונים",
-          "url": "https://tinyurl.com/3fzk3eac"
-        }
       }
     ]
   },
@@ -71,59 +73,39 @@
     "title": "הע\"ס נצורה לחומרים רעילים ",
     "components": [
       {
-        "type": "selectTable",
-        "title": "שדה בתוכנת ALOHA",
-        "columnTitles": ["ערך ברירת מחדל להזנה"],
-        "placeholder": "בחרו שדה...",
-        "options": [
-          {
-            "option": "מיקום",
-            "description": "ניתן להזין מיקום מדויק על בסיס מידע מ-google maps"
-          },
-          {
-            "option": "סוג בניה",
-            "description": "Sheltered surroundings, Double Storied Buildings"
-          },
-          {
-            "option": "תאריך ושעה",
-            "description": "21 ביולי, 23:00"
-          },
-          {
-            "option": "מהירות רוח",
-            "description": "3 מ' לשניה"
-          },
-          {
-            "option": "כיוון הרוח",
-            "description": "כל ערך (אין משמעות)"
-          },
-          {
-            "option": "גובה מדידת הרוח",
-            "description": "10 מ' (גובהו של תורן מטאורולוגי) "
-          },
-          {
-            "option": "חספוס קרקע",
-            "description": "Urban or Forest"
-          },
-          {
-            "option": "כיסוי עננים",
-            "description": "7/10"
-          },
-          {
-            "option": "טמפרטורת האוויר",
-            "description": "25 מעלות צלסיוס"
-          },
-          {
-            "option": "מצב יציבות",
-            "description": "מתקבל אוטומטית – E (יציב)"
-          },
-          {
-            "option": "אינברסיה",
-            "description": "300 מ'"
-          },
-          {
-            "option": "לחות",
-            "description": "Medium (50%)"
-          }
+        "type": "table",
+        "headers": ["שדה בתוכנת ALOHA", "ערך ברירת מחדל להזנה"],
+        "rows": [
+          [
+            { "content": "מיקום", "highlight": true },
+            "ניתן להזין מיקום מדויק על בסיס מידע מ-google maps"
+          ],
+          [
+            { "content": "סוג בניה", "highlight": true },
+            "Sheltered surroundings, Double Storied Buildings"
+          ],
+          [{ "content": "תאריך ושעה", "highlight": true }, "21 ביולי, 23:00"],
+          [{ "content": "מהירות רוח", "highlight": true }, "3 מ' לשניה"],
+          [
+            { "content": "כיוון הרוח", "highlight": true },
+            "כל ערך (אין משמעות)"
+          ],
+          [
+            { "content": "גובה מדידת הרוח", "highlight": true },
+            "10 מ' (גובהו של תורן מטאורולוגי) "
+          ],
+          [{ "content": "חספוס קרקע", "highlight": true }, "Urban or Forest"],
+          [{ "content": "כיסוי עננים", "highlight": true }, "7/10"],
+          [
+            { "content": "טמפרטורת האוויר", "highlight": true },
+            "25 מעלות צלסיוס"
+          ],
+          [
+            { "content": "מצב יציבות", "highlight": true },
+            "מתקבל אוטומטית – E (יציב)"
+          ],
+          [{ "content": "אינברסיה", "highlight": true }, "300 מ'"],
+          [{ "content": "לחות", "highlight": true }, "Medium (50%)"]
         ]
       }
     ]
@@ -179,7 +161,7 @@
         "type": "selectTable",
         "title": "בחרו נוזל רעיל",
         "placeholder": "בחרו חומר...",
-        "columnTitles": ["מספר או\"ם", "AEGL60-3 [ppm]", "AEGL60-2 [ppm]"],
+        "columnTitles": ["מספר או\"ם", "AEGL₆₀-3 [ppm]", "AEGL₆₀-2 [ppm]"],
         "options": [
           {
             "option": "מימן פלואוריד אל-מימי או תמיסה בריכוז של 70% ומעלה",
@@ -244,7 +226,7 @@
         "type": "selectTable",
         "title": "בחרו גז רעיל",
         "placeholder": "בחרו חומר...",
-        "columnTitles": ["מספר או\"ם", "AEGL10-3 [ppm]", "AEGL10-2 [ppm]"],
+        "columnTitles": ["מספר או\"ם", "AEGL₁₀-3 [ppm]", "AEGL₁₀-2 [ppm]"],
         "options": [
           {
             "option": "אמוניה",

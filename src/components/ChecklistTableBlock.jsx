@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function ChecklistTableBlock({ headers, rows, color }) {
-  // Flatten all steps to one list for checkboxes
   const totalSteps = rows.reduce((acc, row) => acc + row.steps.length, 0);
   const [checked, setChecked] = useState(Array(totalSteps).fill(false));
 
@@ -21,8 +20,12 @@ function ChecklistTableBlock({ headers, rows, color }) {
             {headers.map((h, i) => (
               <th
                 className="table-header"
-                style={{ borderColor: color, backgroundColor: color }}
                 key={i}
+                style={{
+                  borderColor: h ? color : "transparent",
+                  backgroundColor: h ? color : "transparent",
+                  color: h ? "white" : "inherit",
+                }}
               >
                 {h}
               </th>
@@ -31,8 +34,8 @@ function ChecklistTableBlock({ headers, rows, color }) {
         </thead>
 
         <tbody>
-          {rows.map((row, rowIndex) => {
-            return row.steps.map((step, stepIndex) => {
+          {rows.map((row, rowIndex) =>
+            row.steps.map((step, stepIndex) => {
               const isFirst = stepIndex === 0;
               const showSource =
                 step[1] && typeof step[1] === "object" && step[1].rowSpan;
@@ -42,20 +45,22 @@ function ChecklistTableBlock({ headers, rows, color }) {
 
               return (
                 <tr key={rowKey}>
-                  {/* Row header (merged only on first step) */}
+                  {/* Row header cell */}
                   {isFirst && (
                     <td
-                      style={{ backgroundColor: color, borderColor: color }}
                       className="table-header"
                       rowSpan={row.steps.length}
+                      style={{
+                        backgroundColor: row.header ? color : "transparent",
+                        borderColor: row.header ? color : "transparent",
+                        color: row.header ? "white" : "inherit",
+                      }}
                     >
                       {row.header}
                     </td>
                   )}
 
-                  {/* Action cell */}
-
-                  {/* Checkbox */}
+                  {/* Checkbox cell */}
                   <td className="no-border">
                     <label className="checkbox-container">
                       <input
@@ -70,7 +75,11 @@ function ChecklistTableBlock({ headers, rows, color }) {
                     </label>
                   </td>
 
-                  <td style={{ borderColor: color }}>{step[0]}</td>
+                  {/* Action step text */}
+                  <td style={{ borderColor: color }}>
+                    {step[0] ?? ""}
+                  </td>
+
                   {/* Info source cell */}
                   {showSource ? (
                     <td
@@ -86,8 +95,8 @@ function ChecklistTableBlock({ headers, rows, color }) {
                   )}
                 </tr>
               );
-            });
-          })}
+            })
+          )}
         </tbody>
       </table>
     </div>

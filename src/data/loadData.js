@@ -5,7 +5,6 @@ import law from "./topics/law.json";
 import routine from "./topics/routine.json";
 import classification from "./topics/classification.json";
 import definitions from "./topics/definitions.json";
-import search from "./topics/search.json";
 import calculator from "./topics/calculator.json";
 import knowledge from "./topics/knowledge.json";
 import materials from "./topics/materials.json";
@@ -18,7 +17,6 @@ const map = {
   "ניהול שגרה": routine,
   'סיווג חומ"ס': classification,
   "הגדרות ועזרים": definitions,
-  "חיפוש חומר": search,
   "מחשבון דון": calculator,
   "אתר שימור ידע": knowledge,
   "חיפוש חומר": materials,

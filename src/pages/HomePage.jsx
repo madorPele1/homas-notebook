@@ -11,7 +11,7 @@ const categories = [
   "הגדרות ועזרים",
   "חיפוש חומר",
   "מחשבון דון",
-  "אתר שימור ידע"
+  "אתר שימור ידע",
 ];
 
 function HomePage() {
@@ -37,23 +37,10 @@ function HomePage() {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <button
-            style={{
-              background: "transparent",
-              border: "transparent",
-            }}
-          >
-            <img
-              style={{ width: "30px" }}
-              src="/homas-notebook/assets/ham-menu.svg"
-              alt="hamburger-menu"
-            />
-          </button>
-          <h1>פנקס החומ"ס</h1>
           <img
             src="/homas-notebook/assets/rhombus.svg"
             style={{
@@ -61,9 +48,11 @@ function HomePage() {
               background: "white",
               borderRadius: "100%",
               padding: "1%",
+              marginLeft: "5%"
             }}
             alt="rhombus"
           />
+          <h1>פנקס החומ"ס</h1>
         </div>
         <div
           className="search-bar"

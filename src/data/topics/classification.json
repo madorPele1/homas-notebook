@@ -157,25 +157,40 @@
         "headers": [],
         "rows": [
           [
-            "1",
+            {
+              "content": "1",
+              "highlight": true
+            },
             {
               "content": "סילון מים",
               "colSpan": 2
             },
-            "3",
+            {
+              "content": "3",
+              "highlight": true
+            },
             "קצף"
           ],
           [
-            "2",
+            {
+              "content": "2",
+              "highlight": true
+            },
             {
               "content": "ערפל או רסס דק",
               "colSpan": 2
             },
-            "4",
+            {
+              "content": "4",
+              "highlight": true
+            },
             "חומר כיבוי יבש"
           ],
           [
-            "P",
+            {
+              "content": "P",
+              "highlight": true
+            },
             "סכנת פיצוץ",
             {
               "content": "ביגוד המגן בפני נוזלים בשילוב מנ\"פ",
@@ -187,18 +202,34 @@
               "rowSpan": 4
             }
           ],
-          ["R"],
           [
-            "S",
+            {
+              "content": "R",
+              "highlight": true
+            }
+          ],
+          [
+            {
+              "content": "S",
+              "highlight": true
+            },
             "סכנת פיצוץ",
             {
               "content": "מנ\"פ וחליפת תקיפה",
               "rowSpan": 2
             }
           ],
-          ["T"],
           [
-            "W",
+            {
+              "content": "T",
+              "highlight": true
+            }
+          ],
+          [
+            {
+              "content": "W",
+              "highlight": true
+            },
             "סכנת פיצוץ",
             {
               "content": "ביגוד המגן בפני נוזלים בשילוב מנ\"פ",
@@ -210,16 +241,29 @@
               "rowSpan": 4
             }
           ],
-          ["X"],
           [
-            "Y",
+            {
+              "content": "X",
+              "highlight": true
+            }
+          ],
+          [
+            {
+              "content": "Y",
+              "highlight": true
+            },
             "סכנת פיצוץ",
             {
               "content": "מנ\"פ וחליפת תקיפה",
               "rowSpan": 2
             }
           ],
-          ["Z"],
+          [
+            {
+              "content": "Z",
+              "highlight": true
+            }
+          ],
           [
             {
               "content": "יש להנחות אוכלוסייה להסתגר ולשקול פינוי אוכלוסייה ",

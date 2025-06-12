@@ -6,7 +6,11 @@ function TableBlock({ headers, rows, color, linkColumns = [] }) {
       <thead>
         <tr>
           {headers.map((h, i) => (
-            <th className="table-header" style={{backgroundColor: color, borderColor: color}} key={i}>
+            <th
+              className="table-header"
+              style={{ backgroundColor: color, borderColor: color }}
+              key={i}
+            >
               {h}
             </th>
           ))}
@@ -16,15 +20,20 @@ function TableBlock({ headers, rows, color, linkColumns = [] }) {
         {rows.map((row, i) => (
           <tr key={i}>
             {row.map((cell, j) => {
-              // If cell is object with spans or a link
+              // If cell is object
               if (
                 typeof cell === "object" &&
                 cell !== null &&
                 !React.isValidElement(cell)
               ) {
-                const { content, colSpan, rowSpan, url } = cell;
+                const { content, colSpan, rowSpan, url, highlight } = cell;
                 return (
-                  <td style={{borderColor: color}}
+                  <td
+                    style={{
+                      borderColor: color,
+                      backgroundColor: highlight ? color : undefined,
+                      color: highlight ? "white" : undefined, // Optional: better contrast
+                    }}
                     key={j}
                     colSpan={colSpan || undefined}
                     rowSpan={rowSpan || undefined}
@@ -41,7 +50,11 @@ function TableBlock({ headers, rows, color, linkColumns = [] }) {
               }
 
               // Regular primitive value
-              return <td style={{borderColor: color}} key={j}>{cell}</td>;
+              return (
+                <td style={{ borderColor: color }} key={j}>
+                  {cell}
+                </td>
+              );
             })}
           </tr>
         ))}

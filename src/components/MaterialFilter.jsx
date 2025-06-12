@@ -9,7 +9,7 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
     risk: "",
   });
 
-  const allMaterials = components.filter((item) => item.SubstanceName); 
+  const allMaterials = components.filter((item) => item.SubstanceName);
 
   const getType = (riskGroup) => {
     const flammable = ["1", "1.1", "2.1", "3", "5.1", "5.2"];
@@ -20,12 +20,17 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
   };
 
   const filtered = allMaterials.filter((mat) => {
-    const type = getType(mat.RiskGroup?.toString?.() ?? "");
+    const riskGroups =
+      mat.RiskGroup?.toString?.()
+        .split(";")
+        .map((r) => r.trim()) ?? [];
+    const typeMatches = riskGroups.some((rg) => getType(rg) === filters.type);
+    const riskMatches = riskGroups.some((rg) => rg.includes(filters.risk));
     return (
-      (!filters.type || type === filters.type) &&
+      (!filters.type || typeMatches) &&
       (!filters.un || mat.UNNumber?.toString?.().includes(filters.un)) &&
       (!filters.name || mat.SubstanceName.includes(filters.name)) &&
-      (!filters.risk || mat.RiskGroup?.toString?.().includes(filters.risk))
+      (!filters.risk || riskMatches)
     );
   });
 
@@ -69,12 +74,12 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
               <p>קבוצת סיכון: {mat.RiskGroup}</p>
               {mat.AEGL3_10 && (
                 <p>
-                  <b>AEGL10-3:</b> {mat.AEGL3_10} ppm
+                  <b>AEGL₁₀-3:</b> {mat.AEGL3_10} ppm
                 </p>
               )}
               {mat.AEGL2_10 && (
                 <p>
-                  <b>AEGL10-2:</b> {mat.AEGL2_10} ppm
+                  <b>AEGL₁₀-2:</b> {mat.AEGL2_10} ppm
                 </p>
               )}
               {mat.ExplosionHazardUnit && (
@@ -84,7 +89,7 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
               )}
               {mat.FireballHazardUnit && (
                 <p>
-                  <b>יח' סיכון Fireball:</b> {mat.FireballHazardUnit}
+                  <b>יח' סיכון כדור אש:</b> {mat.FireballHazardUnit}
                 </p>
               )}
               {mat.SpecialPopulationRisk && (
@@ -101,8 +106,8 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
             <tr>
               <th>שם</th>
               <th>מספר או"ם</th>
-              <th>AEGL10-3</th>
-              <th>AEGL10-2</th>
+              <th>AEGL₁₀-3</th>
+              <th>AEGL₁₀-2</th>
               <th>קבוצת סיכון</th>
             </tr>
           </thead>

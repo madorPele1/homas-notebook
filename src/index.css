@@ -49,6 +49,9 @@ h1 {
   font-weight: 600;
   justify-content: space-between;
   align-items: center;
+  min-height: 9vh;
+  gap: 5%;
+  font-size: 17px;
 }
 
 .search-bar {
@@ -70,7 +73,7 @@ h1 {
 /* checkbox && table */
 table {
   border-collapse: separate;
-  border-spacing: 8px;
+  border-spacing: 5px;
   width: 100%;
   direction: rtl;
   border: 1px rgb(88, 182, 192);

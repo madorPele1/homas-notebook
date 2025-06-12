@@ -19,6 +19,7 @@ const sampleTopics = {
   ],
   "הערכת סיכונים": [
     'הנחות עבודה לביצוע הע"ס נצורה',
+    "מדדי סיכון לשימוש",
     'הע"ס נצורה לחומרים רעילים – ברירות מחדל כלליות',
     'הע"ס נצורה לחומרים רעילים – ברירות מחדל לפי תרחיש',
     "מדדי סיכון עבור נוזלים רעילים נפוצים",
@@ -102,7 +103,6 @@ function CategoryPage() {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-evenly",
                 alignItems: "center",
                 marginTop: "10px",
               }}
@@ -111,6 +111,7 @@ function CategoryPage() {
                 style={{
                   background: "transparent",
                   border: "transparent",
+                  margin: "0 5% 0 15%",
                 }}
                 onClick={handleHomeClick}
               >

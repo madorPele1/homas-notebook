@@ -1,10 +1,20 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ItemRenderer from "../components/ItemRenderer";
 import loadData, { categoryColors } from "../data/loadData";
 
 function ItemPage({ modal }) {
+  useEffect(() => {
+    if (modal) {
+      document.body.style.overflow = "hidden"; // Lock scroll
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Reset on unmount
+    };
+  }, [modal]);
+
   const { categoryId, itemId } = useParams();
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(true);
