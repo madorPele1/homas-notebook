@@ -1,5 +1,5 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sampleTopics = {
@@ -69,8 +69,12 @@ function CategoryPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
-
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const openTopic = queryParams.get("topic");
   const topics = sampleTopics[categoryId] || [];
+  const scrollRef = useRef(null);
+
 
   const handleHomeClick = () => {
     setIsVisible(false);
@@ -138,8 +142,8 @@ function CategoryPage() {
           >
             {topics.map((topic) => (
               <motion.li
-                className="list-item"
                 key={topic}
+                ref={topic === openTopic ? scrollRef : null}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -149,16 +153,16 @@ function CategoryPage() {
                   alignItems: "center",
                   padding: "18px 20px",
                   borderRadius: "30vh",
-                  backgroundColor: "#f4f4f4",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                  backgroundColor: topic === openTopic ? "#d0f0ff" : "#f4f4f4",
+                  boxShadow: topic === openTopic ? "0 0 10px rgba(0, 0, 0, 0.2)" : "0 2px 6px rgba(0,0,0,0.1)",
                   cursor: "pointer",
-                  transition: "background-color 0.3s ease",
+                  transition: "all 0.3s ease",
+                  color: "rgb(34 113 114)",
+                  fontWeight: "bold"
                 }}
                 onClick={() =>
                   navigate(
-                    `/item/${encodeURIComponent(
-                      categoryId
-                    )}/${encodeURIComponent(topic)}`,
+                    `/item/${encodeURIComponent(categoryId)}/${encodeURIComponent(topic)}`,
                     { state: { background: location } }
                   )
                 }

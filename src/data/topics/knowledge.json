@@ -1,26 +1,22 @@
 {
-   "אתר שימור ידע": {
-    "title":   "אתר שימור ידע",
+  "אתר שימור ידע": {
+    "title": "אתר שימור ידע",
     "components": [
       {
         "type": "text",
-        "content": "אתר שימור ידע"
-      },
-      {
-        "type": "text",
-        "content": "ענף חומ\"ס"
-      },
-      {
-        "type": "text",
-        "content": "https://tikshuv.sharepoint.com/sites/-Migonhomas/SitePages/CollabHome.aspx"
-      },
-      {
-        "type": "text",
-        "content": "08-9783823"
-      },
-      {
-        "type": "text",
-        "content": "merkazhomas@gmail.com"
+        "content": {
+          "special": "knowledge",
+          "items": [
+            { "text": "ענף חומ\"ס" },
+            { "text": "08-9783823" },
+            { "text": "merkazhomas@gmail.com" },
+            {
+              "type": "link",
+              "text": "קישור לסביבת עבודה חומ\"ס",
+              "url": "https://tikshuv.sharepoint.com/sites/-Migonhomas/SitePages/CollabHome.aspx"
+            }
+          ]
+        }
       }
     ]
   }

@@ -22,6 +22,7 @@ function ItemRenderer({ components, color }) {
             headers={block.headers}
             rows={block.rows}
             linkColumns={block.linkColumns}
+            columnWidths={block.columnWidths}
             color={color}
           />
         );

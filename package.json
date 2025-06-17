@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && copy dist\\index.html dist\\404.html && npx gh-pages -d dist"
+    "deploy": "vite build && copy dist\\index.html dist\\404.html && npx gh-pages -d dist",
+    "generate-search": "node generateSearchIndex.js"
   },
   "dependencies": {
     "@fontsource/heebo": "^5.2.5",

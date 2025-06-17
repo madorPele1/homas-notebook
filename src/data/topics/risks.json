@@ -12,6 +12,7 @@
       {
         "type": "table",
         "headers": [],
+        
         "rows": [
           [
             { "content": "סוג חומר וכמות", "highlight": true },

@@ -1,26 +1,61 @@
 import React from "react";
 
-function TableBlock({ headers, rows, color, linkColumns = [] }) {
+function TableBlock({ headers = [], rows, color, linkColumns = [], columnWidths = [] }) {
+  const columnCount = headers.length || (rows[0]?.length || 0);
+  const useFixedLayout = columnWidths.length > 0;
+
   return (
-    <table border="1" cellPadding="8">
-      <thead>
-        <tr>
-          {headers.map((h, i) => (
-            <th
-              className="table-header"
-              style={{ backgroundColor: color, borderColor: color }}
+    <table
+      border="1"
+      cellPadding="8"
+      style={{
+        tableLayout: useFixedLayout ? "fixed" : "auto",
+        width: "100%",
+      }}
+    >
+      {useFixedLayout && (
+        <colgroup>
+          {Array.from({ length: columnCount }).map((_, i) => (
+            <col
               key={i}
-            >
-              {h}
-            </th>
+              style={{
+                width: columnWidths[i] || "auto",
+              }}
+            />
           ))}
-        </tr>
-      </thead>
+        </colgroup>
+      )}
+
+      {headers.length > 0 && (
+        <thead>
+          <tr>
+            {headers.map((h, i) => {
+              const isEmpty = !h || h.trim() === "";
+              return (
+                <th
+                  className="table-header"
+                  key={i}
+                  style={{
+                    backgroundColor: isEmpty ? "transparent" : color,
+                    borderColor: isEmpty ? "transparent" : color,
+                  }}
+                >
+                  {h}
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+      )}
+
       <tbody>
         {rows.map((row, i) => (
           <tr key={i}>
             {row.map((cell, j) => {
-              // If cell is object
+              const baseStyle = {
+                borderColor: color,
+              };
+
               if (
                 typeof cell === "object" &&
                 cell !== null &&
@@ -29,14 +64,14 @@ function TableBlock({ headers, rows, color, linkColumns = [] }) {
                 const { content, colSpan, rowSpan, url, highlight } = cell;
                 return (
                   <td
-                    style={{
-                      borderColor: color,
-                      backgroundColor: highlight ? color : undefined,
-                      color: highlight ? "white" : undefined, // Optional: better contrast
-                    }}
                     key={j}
-                    colSpan={colSpan || undefined}
-                    rowSpan={rowSpan || undefined}
+                    colSpan={colSpan}
+                    rowSpan={rowSpan}
+                    style={{
+                      ...baseStyle,
+                      backgroundColor: highlight ? color : undefined,
+                      color: highlight ? "white" : undefined,
+                    }}
                   >
                     {linkColumns.includes(j) && url ? (
                       <a href={url} target="_blank" rel="noopener noreferrer">
@@ -49,9 +84,8 @@ function TableBlock({ headers, rows, color, linkColumns = [] }) {
                 );
               }
 
-              // Regular primitive value
               return (
-                <td style={{ borderColor: color }} key={j}>
+                <td key={j} style={baseStyle}>
                   {cell}
                 </td>
               );

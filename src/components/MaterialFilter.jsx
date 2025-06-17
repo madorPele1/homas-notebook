@@ -68,7 +68,13 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
         <div className="material-card-list">
           {filtered.map((mat, i) => (
             <div className="material-card" key={i}>
-              <h3>{mat.SubstanceName}</h3>
+              <h3
+                className={
+                  mat.SubstanceName.length > 15 ? "long-name" : ""
+                }
+              >
+                {mat.SubstanceName}
+              </h3>
               <p>מספר או"ם: {mat.UNNumber}</p>
               <p>CAS: {mat.CAS}</p>
               <p>קבוצת סיכון: {mat.RiskGroup}</p>

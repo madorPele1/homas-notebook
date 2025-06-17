@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function IntroPage() {
   const navigate = useNavigate();
+  useEffect(() => {
+    const handleClickAnywhere = () => {
+      navigate("/home");
+    };
+    window.addEventListener("click", handleClickAnywhere);
+    return () => window.removeEventListener("click", handleClickAnywhere);
+  }, [navigate]);
+
   return (
     <div
       style={{
@@ -18,7 +27,7 @@ function IntroPage() {
           src="/homas-notebook/assets/notebookBG.svg"
           alt="notebookBG"
         />
-        <div style={{ padding: "2rem" }}>
+        <div style={{ padding: "2rem 2rem 1rem 2rem", fontSize: "2.4vh" }}>
           <div
             style={{
               borderBottom: "5px solid rgb(36, 158, 180)",
@@ -48,10 +57,18 @@ function IntroPage() {
             העורף בכלל הרמות.
           </p>
         </div>
-        <button onClick={() => navigate("/home")}>צללו פנימה</button>
-      </div>
+        <div
+          onClick={() => navigate("/home")}
+          style={{
+            fontSize: "2rem",
+            color: "#2d9294",
+            animation: "blink 2s infinite",
+            cursor: "pointer",
+          }}
+        >
+          צללו פנימה
+        </div>      </div>
 
-      {/* Footer */}
       <div
         style={{
           display: "flex",
@@ -82,6 +99,12 @@ function IntroPage() {
           }}
         ></div>
       </div>
+      <style>{`
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+`}</style>
     </div>
   );
 }

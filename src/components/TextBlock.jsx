@@ -1,4 +1,27 @@
 function TextBlock({ content, color }) {
+  if (content?.special === "knowledge") {
+    const contactItems = content.items || [];
+    return (
+      <div style={{ margin: "5%", padding: "3%", backgroundColor: "#f5f5f5", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
+        <h2 style={{ color, borderBottom: `2px solid ${color}`, paddingBottom: "0.5rem", marginBottom: "1.5rem" }}>אתר שימור ידע</h2>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {contactItems.map((item, i) => (
+            <li key={i} style={{ marginBottom: "1rem", display: "flex", alignItems: "center", gap: "10px", fontSize: "1.1rem" }}>
+              {item.icon && <span>{item.icon}</span>}
+              {item.type === "link" ? (
+                <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: "#0077cc", textDecoration: "underline" }}>
+                  {item.text}
+                </a>
+              ) : (
+                <span>{item.text}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   if (typeof content === "string") {
     return <p style={{ margin: "4%" }}>{content}</p>;
   }
@@ -9,23 +32,37 @@ function TextBlock({ content, color }) {
     switch (type) {
       case "title":
         return (
-          <div style={{
-            margin: "4% 2%",
-            padding: "4%",
-            backgroundColor: color,
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-            borderRadius: "6px",
-            color: "white"
-          }}>
+          <div
+            style={{
+              margin: "4% 2%",
+              padding: "4%",
+              backgroundColor: color,
+              fontWeight: "bold",
+              fontSize: "1.2rem",
+              borderRadius: "6px",
+              color: "white",
+            }}
+          >
             {text}
           </div>
         );
       case "bullets":
         return (
-          <ul style={{ margin: "4%", paddingLeft: "20px" }}>
+          <ul style={{ margin: "4% 2%", paddingLeft: "20px", listStyle: "disc" }}>
             {text.map((item, i) => (
-              <li key={i} style={{ marginBottom: "4px" }}>{item}</li>
+              <li
+                key={i}
+                style={{
+                  marginBottom: "0.5rem",
+                  lineHeight: "1.6",
+                  padding: "1rem",
+                  backgroundColor: "#f9f9f9",
+                  borderRadius: "13px",
+                  paddingLeft: "10px",
+                }}
+              >
+                {item}
+              </li>
             ))}
           </ul>
         );
