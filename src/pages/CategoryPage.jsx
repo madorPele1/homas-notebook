@@ -158,7 +158,9 @@ function CategoryPage() {
                   cursor: "pointer",
                   transition: "all 0.3s ease",
                   color: "rgb(34 113 114)",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                  gap: "10%",
+                  fontSize: "1rem"
                 }}
                 onClick={() =>
                   navigate(
