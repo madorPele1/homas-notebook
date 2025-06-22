@@ -81,31 +81,42 @@ function ItemPage({ modal }) {
             {modal && (
               <motion.div
                 className="item-title"
-                style={{ backgroundColor: categoryColor }}
+                style={{
+                  backgroundColor: categoryColor,
+                  position: "relative",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "1rem 3rem",
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
               >
+                {/* Close Button */}
                 <motion.button
                   onClick={handleClose}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   style={{
-                    fontSize: "1.2rem",
+                    position: "absolute",
+                    right: "1rem",
+                    top: "0.7rem",
+                    fontSize: "1.1rem",
                     background: "transparent",
                     cursor: "pointer",
                     border: "white solid",
                     borderRadius: "100%",
                     color: "white",
-                    padding: "1% 3% 2% 3%",
                   }}
                 >
                   ✖
                 </motion.button>
-                <h2 style={{ margin: 0 }}>{item.title}</h2>
+
+                {/* Centered Title */}
+                <h2 style={{ margin: 0, color: "white" }}>{item.title}</h2>
               </motion.div>
             )}
-
             <ItemRenderer components={item.components} color={categoryColor} />
           </motion.div>
         </motion.div>

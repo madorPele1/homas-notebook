@@ -9,9 +9,9 @@ const categories = {
   "ניהול שגרה": "routine.json",
   'סיווג חומ"ס': "classification.json",
   "הגדרות ועזרים": "definitions.json",
-  "מחשבון דון": "calculator.json",
+  'מחשבון דו"ן': "calculator.json",
   "אתר שימור ידע": "knowledge.json",
-  "חיפוש חומר": "materials.json",
+  "חיפוש": "materials.json",
 };
 
 const srcDir = path.join(__dirname, "src", "data", "topics");

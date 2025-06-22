@@ -41,6 +41,7 @@
             "title": "קבוצה 2 – גזים",
             "preContent": "גזים מתחלקים ל-3 תת-קבוצות לפי סיכוניהם:",
             "image": "/homas-notebook/assets/rhombuses/2.svg",
+            "imageWidth": "80%",
             "items": [
               {
                 "title": "2.1",
@@ -59,7 +60,8 @@
           {
             "title": "קבוצה 3 – נוזלים דליקים",
             "postContent": "נוזלים או מוצקים מותכים; ללא תתי-קבוצות. ידווחו לפיקוד העורף החל מ-500 ק\"ג",
-            "image": "/homas-notebook/assets/rhombuses/3.svg"
+            "image": "/homas-notebook/assets/rhombuses/3.svg",
+            "imageWidth": "50%"
           },
           {
             "title": "קבוצה 4 – דליקים",
@@ -79,7 +81,8 @@
               }
             ],
             "postContent": "ידווחו לפיקוד העורף החל מ-500 ק\"ג",
-            "image": "/homas-notebook/assets/rhombuses/4.svg"
+            "image": "/homas-notebook/assets/rhombuses/4.svg",
+            "imageWidth": "70%"
           },
           {
             "title": "קבוצה 5 – מחמצנים",
@@ -114,17 +117,20 @@
           {
             "title": "קבוצה 7 – רדיואקטיביים ",
             "postContent": "לא מוכרזים כחומר מסוכן לעניין חוק הג\"א ותקנותיו.",
-            "image": "/homas-notebook/assets/rhombuses/7.svg"
+            "image": "/homas-notebook/assets/rhombuses/7.svg",
+            "imageWidth": "40%"
           },
           {
             "title": "קבוצה 8 – מאכלים (קורוזיביים)",
             "postContent": "חומצות ובסיסים. \n ידווחו לפיקוד העורף החל מ-500 ק\"ג",
-            "image": "/homas-notebook/assets/rhombuses/8.svg"
+            "image": "/homas-notebook/assets/rhombuses/8.svg",
+            "imageWidth": "50%"
           },
           {
             "title": "קבוצה 9 – חומרים מסוכנים שונים",
             "postContent": "חומרים מסוכנים שאינם מוגדרים אחרת. \n ידווחו לפיקוד העורף החל מ-1,000 ק\"ג",
-            "image": "/homas-notebook/assets/rhombuses/9.svg"
+            "image": "/homas-notebook/assets/rhombuses/9.svg",
+            "imageWidth": "55%"
           }
         ]
       },
@@ -156,10 +162,12 @@
         "type": "table",
         "headers": [],
         "columnWidths": [
-          "24%",
-          "38%",
-          "70%",
-          "80%"
+          "10%",
+          "25%",
+          "25%",
+          "10%",
+          "10%",
+          "10%"
         ],
         "rows": [
           [
@@ -308,8 +316,8 @@
           "שם החומר"
         ],
         "columnWidths": [
-          "24%",
-          "38%",
+          "34%",
+          "50%",
           "70%"
         ],
         "rows": [

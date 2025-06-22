@@ -79,12 +79,12 @@ function MaterialFilter({ components = [], color = "#00B3C7" }) {
               <p>CAS: {mat.CAS}</p>
               <p>קבוצת סיכון: {mat.RiskGroup}</p>
               {mat.AEGL3_10 && (
-                <p>
+                <p style={{direction: "ltr"}}>
                   <b>AEGL₁₀-3:</b> {mat.AEGL3_10} ppm
                 </p>
               )}
               {mat.AEGL2_10 && (
-                <p>
+                <p style={{direction: "ltr"}}>
                   <b>AEGL₁₀-2:</b> {mat.AEGL2_10} ppm
                 </p>
               )}

@@ -38,9 +38,10 @@ function TextBlock({ content, color }) {
               padding: "4%",
               backgroundColor: color,
               fontWeight: "bold",
-              fontSize: "1.2rem",
+              fontSize: "1.1rem",
               borderRadius: "6px",
               color: "white",
+              textAlign: "center"
             }}
           >
             {text}
@@ -48,7 +49,7 @@ function TextBlock({ content, color }) {
         );
       case "bullets":
         return (
-          <ul style={{ margin: "4% 2%", paddingLeft: "20px", listStyle: "disc" }}>
+          <ul style={{ padding: "20px", listStyle: "none" }}>
             {text.map((item, i) => (
               <li
                 key={i}

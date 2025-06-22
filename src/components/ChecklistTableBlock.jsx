@@ -22,6 +22,7 @@ function ChecklistTableBlock({ headers, rows, color }) {
                 className="table-header"
                 key={i}
                 style={{
+                  position: "sticky",
                   borderColor: h ? color : "transparent",
                   backgroundColor: h ? color : "transparent",
                   color: h ? "white" : "inherit",

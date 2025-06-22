@@ -40,6 +40,13 @@
       {
         "type": "text",
         "content": {
+          "type": "title",
+          "text": "הפניות"
+        }
+      },
+      {
+        "type": "text",
+        "content": {
           "type": "link",
           "text": "תרגולת הערכת סיכונים",
           "url": "https://tinyurl.com/3fzk3eac"
@@ -144,6 +151,13 @@
             "AEGL-3 (60 min) AEGL-2 (60 min)"
           ]
         ]
+      },
+      {
+        "type": "text",
+        "content": {
+          "type": "title",
+          "text": "הפניות"
+        }
       },
       {
         "type": "text",
@@ -320,7 +334,7 @@
         "columnTitles": ["מספר או\"ם", "יח' סיכון לפיצוץ", "יח' סיכון כדור אש"],
         "options": [
           {
-            "option": "אמוניום ניטראט טכני או חלקאי",
+            "option": "אמוניום ניטראט טכני או חקלאי",
             "columns": ["1942 / 2067", "11", "ללא"]
           },
           {

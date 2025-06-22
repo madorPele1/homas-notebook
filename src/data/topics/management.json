@@ -305,23 +305,8 @@
             "components": [
               {
                 "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/boots.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
-                "alt": "gloves"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/ALevelSuit.svg",
-                "alt": "ALevelSuit"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/ALevelMask.svg",
-                "alt": "ALevelMask"
+                "src": "/homas-notebook/assets/protection-levels/ALevel.svg",
+                "alt": "ALevel"
               },
               {
                 "type": "text",
@@ -334,23 +319,8 @@
             "components": [
               {
                 "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/boots.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/BLevelSuit.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/BLevelMask.svg",
-                "alt": "boots"
+                "src": "/homas-notebook/assets/protection-levels/BLevel.svg",
+                "alt": "BLevel"
               },
               {
                 "type": "text",
@@ -363,23 +333,8 @@
             "components": [
               {
                 "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/boots.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/gloves.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/CLevelSuit.svg",
-                "alt": "boots"
-              },
-              {
-                "type": "image",
-                "src": "/homas-notebook/assets/protection-levels/CLevelMask.svg",
-                "alt": "boots"
+                "src": "/homas-notebook/assets/protection-levels/CLevel.svg",
+                "alt": "CLevel"
               },
               {
                 "type": "text",
@@ -439,22 +394,7 @@
       },
       {
         "type": "image",
-        "src": "/homas-notebook/assets/protection-levels/boots.svg",
-        "alt": "boots"
-      },
-      {
-        "type": "image",
-        "src": "/homas-notebook/assets/protection-levels/gloves.svg",
-        "alt": "boots"
-      },
-      {
-        "type": "image",
-        "src": "/homas-notebook/assets/protection-levels/CLevelSuit.svg",
-        "alt": "boots"
-      },
-      {
-        "type": "image",
-        "src": "/homas-notebook/assets/protection-levels/CLevelMask.svg",
+        "src": "/homas-notebook/assets/protection-levels/CLevel.svg",
         "alt": "boots"
       },
       {

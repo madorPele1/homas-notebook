@@ -7,6 +7,7 @@ import SelectTable from "./SelectTable";
 import CollapsibleSections from "./CollapsibleSections";
 import CalculatorBlock from "./CalculatorBlock";
 import MaterialFilter from "./MaterialFilter";
+import FilterDecoder from "./FilterDecoder";
 
 function ItemRenderer({ components, color }) {
   return components.map((block, i) => {
@@ -14,7 +15,7 @@ function ItemRenderer({ components, color }) {
       case "text":
         return <TextBlock key={i} content={block.content} color={color} />;
       case "image":
-        return <ImageBlock key={i} src={block.src} alt={block.alt} />;
+        return <ImageBlock key={i} src={block.src} alt={block.alt} width={block.width}/>;
       case "table":
         return (
           <TableBlock
@@ -77,7 +78,14 @@ function ItemRenderer({ components, color }) {
             color={color}
           />
         );
-
+      case "filterDecoder":
+        return (
+          <FilterDecoder
+            key={i}
+            filterInfo={block.filterInfo}
+            concentrationInfo={block.concentrationInfo}
+          />
+        );
       default:
         return null;
     }

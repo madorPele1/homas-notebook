@@ -45,8 +45,8 @@ const sampleTopics = {
   ],
   "הגדרות ועזרים": ["הגדרות", "תוכנות חיוניות"],
   "אתר שימור ידע": ["אתר שימור ידע"],
-  "מחשבון דון": ["מחשבון דון"],
-  "חיפוש חומר": ["חיפוש חומר"],
+  'מחשבון דו"ן': ['מחשבון דו"ן'],
+  "חיפוש": ["חיפוש חומר", "חיפוש מסנן"],
 };
 
 const listVariants = {
@@ -74,7 +74,21 @@ function CategoryPage() {
   const openTopic = queryParams.get("topic");
   const topics = sampleTopics[categoryId] || [];
   const scrollRef = useRef(null);
+  const hasRedirected = useRef(false);
 
+  useEffect(() => {
+    if (
+      topics.length === 1 &&
+      !hasRedirected.current &&
+      location.pathname === `/category/${encodeURIComponent(categoryId)}`
+    ) {
+      hasRedirected.current = true; // prevent re-triggering
+      navigate(
+        `/item/${encodeURIComponent(categoryId)}/${encodeURIComponent(topics[0])}`,
+        { state: { background: location }, replace: true }
+      );
+    }
+  }, [topics, categoryId, location, navigate]);
 
   const handleHomeClick = () => {
     setIsVisible(false);
@@ -82,6 +96,7 @@ function CategoryPage() {
       navigate("../home");
     }, 300); // Match the duration of exit animation
   };
+
 
   return (
     <AnimatePresence>
@@ -160,7 +175,8 @@ function CategoryPage() {
                   color: "rgb(34 113 114)",
                   fontWeight: "bold",
                   gap: "10%",
-                  fontSize: "1rem"
+                  fontSize: "1rem",
+                  minHeight: "7vh"
                 }}
                 onClick={() =>
                   navigate(

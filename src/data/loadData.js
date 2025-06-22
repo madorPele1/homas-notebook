@@ -17,9 +17,9 @@ const map = {
   "ניהול שגרה": routine,
   'סיווג חומ"ס': classification,
   "הגדרות ועזרים": definitions,
-  "מחשבון דון": calculator,
+  'מחשבון דו"ן': calculator,
   "אתר שימור ידע": knowledge,
-  "חיפוש חומר": materials,
+  "חיפוש": materials,
 };
 
 export const categoryColors = {
@@ -30,8 +30,8 @@ export const categoryColors = {
   "ניהול שגרה": "#75BDA7",
   'סיווג חומ"ס': "#3494BA",
   "הגדרות ועזרים": "#008C95",
-  "מחשבון דון": "#1C257D",
-  "חיפוש חומר": "#6C757D",
+  'מחשבון דו"ן': "#1C257D",
+  "חיפוש": "#6C757D",
   "אתר שימור ידע": "#8C757D",
 };
 

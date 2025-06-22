@@ -6,6 +6,7 @@ body {
   font-family: "Heebo";
   font-size: 18px;
 }
+
 nav {
   background: #249eb4;
   color: white;
@@ -15,6 +16,7 @@ nav {
 h1 {
   font-weight: 700;
 }
+
 .category-grid {
   display: flex;
   flex-wrap: wrap;
@@ -76,28 +78,33 @@ table {
   width: 100%;
   direction: rtl;
   border: 1px rgb(88, 182, 192);
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
+
 .table-header {
   color: white;
   font-weight: bold;
-  position: sticky;
   top: -2%;
 }
+
 td {
   font-weight: 100;
 }
+
 td,
 th {
   border-radius: 5px;
   border: 2px solid;
   text-align: center;
+  word-wrap: break-word;
 }
+
 .no-border {
   border: 0;
   background-color: transparent;
   padding: 0;
 }
+
 .checkbox-container {
   position: relative;
   padding-left: 24px;
@@ -122,7 +129,7 @@ th {
   border-radius: 4px;
 }
 
-.checkbox-container input:checked ~ .checkmark {
+.checkbox-container input:checked~.checkmark {
   background-color: #58b6c0;
 }
 
@@ -132,7 +139,7 @@ th {
   display: none;
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkbox-container input:checked~.checkmark:after {
   display: block;
 }
 
@@ -250,6 +257,7 @@ th {
   background-color: inherit;
   overflow: hidden;
 }
+
 /* Pseudo-element overlay to darken the background */
 .section-btn::before {
   content: "";
@@ -300,6 +308,9 @@ th {
   text-align: center;
   font-size: 1rem;
   padding: 5% 2% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* calculator */
@@ -485,7 +496,7 @@ th {
 .search-results {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 1rem auto;
   width: 90%;
   max-height: 300px;
@@ -494,4 +505,64 @@ th {
 
 .search-result-item:hover {
   background-color: #f0f0f0;
+}
+
+/* filterDecoder */
+.filter-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  max-width: 600px;
+  margin: auto;
+  direction: rtl;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+  color: #222;
+  text-align: center;
+}
+
+.filter-input {
+  width: 80%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border 0.2s;
+}
+
+.filter-button {
+  width: 70%;
+  padding: 0.75rem;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-results {
+  margin-top: 1.5rem;
+}
+
+.filter-line {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-right: 5px solid;
 }

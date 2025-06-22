@@ -48,8 +48,13 @@
     "components": [
       {
         "type": "table",
-        "headers": ["תוכנה", "שימוש"],
-        "linkColumns": [0],
+        "headers": [
+          "תוכנה",
+          "שימוש"
+        ],
+        "linkColumns": [
+          0
+        ],
         "rows": [
           [
             {

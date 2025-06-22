@@ -30,20 +30,25 @@ function TableBlock({ headers = [], rows, color, linkColumns = [], columnWidths 
         <thead>
           <tr>
             {headers.map((h, i) => {
-              const isEmpty = !h || h.trim() === "";
+              const label = typeof h === "string" ? h : h?.label || "";
+              const isEmpty = !label.trim();
+              const shouldStick = rows.length >= 3;
+
               return (
                 <th
-                  className="table-header"
                   key={i}
+                  className="table-header"
                   style={{
+                    position: shouldStick? "sticky" : "",
                     backgroundColor: isEmpty ? "transparent" : color,
                     borderColor: isEmpty ? "transparent" : color,
                   }}
                 >
-                  {h}
+                  {label}
                 </th>
               );
             })}
+
           </tr>
         </thead>
       )}
@@ -71,6 +76,7 @@ function TableBlock({ headers = [], rows, color, linkColumns = [], columnWidths 
                       ...baseStyle,
                       backgroundColor: highlight ? color : undefined,
                       color: highlight ? "white" : undefined,
+                      fontWeight: highlight ? "bold" : undefined
                     }}
                   >
                     {linkColumns.includes(j) && url ? (
