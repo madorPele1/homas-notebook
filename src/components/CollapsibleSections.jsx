@@ -54,21 +54,29 @@ function CollapsibleSections({ sections, color }) {
               {/* Items (if present) */}
               {Array.isArray(section.items) &&
                 section.items.map((item, itemIdx) => {
-                  const isOpen = openSubItem[`${secIdx}-${itemIdx}`];
+                  const isAlwaysOpen = section.autoExpand === true;
+                  const isOpen = isAlwaysOpen || openSubItem[`${secIdx}-${itemIdx}`];
+
                   return (
                     <div
-                      key={
-                        item.id || `${section.title}-${item.title}` || itemIdx
-                      }
+                      key={item.id || `${section.title}-${item.title}` || itemIdx}
                       className="sub-item"
                     >
-                      <button
-                        className="sub-item-btn"
-                        onClick={() => toggleSubItem(secIdx, itemIdx)}
-                      >
-                        {item.icon && <span className="icon">{item.icon}</span>}
-                        {item.title}
-                      </button>
+                      {isAlwaysOpen ? (
+                        <div className="sub-item-btn">
+                          {item.icon && <span className="icon">{item.icon}</span>}
+                          {item.title}
+                        </div>
+                      ) : (
+                        <button
+                          className="sub-item-btn"
+                          onClick={() => toggleSubItem(secIdx, itemIdx)}
+                        >
+                          {item.icon && <span className="icon">{item.icon}</span>}
+                          {item.title}
+                        </button>
+                      )}
+
                       {isOpen && (
                         <div className="sub-item-content">
                           {item.image && (
@@ -95,7 +103,6 @@ function CollapsibleSections({ sections, color }) {
                       style={{
                         width: section.imageWidth || "100%",
                         maxWidth: "100%",
-                        margin: "1rem auto",
                         display: "block",
                       }}
                     />

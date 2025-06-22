@@ -65,6 +65,7 @@ function ContentSwitcher({ options, color }) {
                   headers={block.headers}
                   rows={block.rows}
                   color={color}
+                  linkColumns={block.linkColumns || []}
                 />
               );
             default:

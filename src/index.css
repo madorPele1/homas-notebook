@@ -269,11 +269,12 @@ th {
 }
 
 .sub-items {
-  padding: 30px 10px 10px 10px;
+  padding: 40px 10px 10px 10px;
   border-radius: 20px;
   position: relative;
   top: -33px;
   z-index: 0;
+  word-break: keep-all;
 }
 
 .sub-item-btn {
@@ -281,14 +282,10 @@ th {
   border: none;
   padding: 10px 16px;
   margin: 6px 0 0;
-  width: 100%;
   font-size: 1rem;
   cursor: pointer;
   font-family: "Heebo";
-}
-
-.sub-item-btn:hover {
-  background-color: #ddd;
+  width: -webkit-fill-available;
 }
 
 .sub-item-content {

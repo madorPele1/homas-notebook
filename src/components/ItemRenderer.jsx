@@ -15,7 +15,7 @@ function ItemRenderer({ components, color }) {
       case "text":
         return <TextBlock key={i} content={block.content} color={color} />;
       case "image":
-        return <ImageBlock key={i} src={block.src} alt={block.alt} width={block.width}/>;
+        return <ImageBlock key={i} src={block.src} alt={block.alt} width={block.width} />;
       case "table":
         return (
           <TableBlock
@@ -38,7 +38,8 @@ function ItemRenderer({ components, color }) {
         );
       case "contentSwitch":
         return (
-          <ContentSwitcher key={i} options={block.options} color={color} />
+          <ContentSwitcher key={i} options={block.options} color={color} linkColumns={block.linkColumns}
+          />
         );
       case "selectTable":
         return (
