@@ -102,16 +102,23 @@ function ItemPage({ modal }) {
                     position: "absolute",
                     right: "1rem",
                     top: "0.7rem",
-                    fontSize: "1.1rem",
                     background: "transparent",
                     cursor: "pointer",
-                    border: "white solid",
-                    borderRadius: "100%",
-                    color: "white",
+                    border: "none",
+                    padding: 0,
                   }}
                 >
-                  ✖
+                  <img
+                    src="/homas-notebook/assets/x.svg"
+                    alt="סגור"
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                      display: "block",
+                    }}
+                  />
                 </motion.button>
+
 
                 {/* Centered Title */}
                 <h2 style={{ margin: 0, color: "white" }}>{item.title}</h2>

@@ -136,24 +136,22 @@
                 "type": "table",
                 "headers": [
                   "משימות",
-                  "מערכות",
-                  "הפניות"
+                  "מערכות"
                 ],
                 "linkColumns": [
-                  2
+                  0,
+                  1
                 ],
                 "rows": [
                   [
                     "ביקורות חירום",
-                    "סקר מקוון",
                     {
-                      "content": "אפליקציית ביקורות חירום",
+                      "content": "סקר מקוון",
                       "url": "https://arcg.is/1TfK0S"
                     }
                   ],
                   [
                     "עדכון סטאטוס קיום צווים",
-                    "דשבורד חומ\"ס",
                     {
                       "content": "דשבורד חומ\"ס",
                       "url": "https://experience.arcgis.com/experience/118308a4fa704f2faa80c1fc782b40ec/page/%d7%a0%d7%99%d7%94%d7%95%d7%9c/"
@@ -175,17 +173,26 @@
                   "משימות",
                   "מערכות"
                 ],
+                "linkColumns": [
+                  1
+                ],
                 "rows": [
                   [
                     "ריכוז סטאטוס מלאים"
                   ],
                   [
                     "גיבוש תמ\"צ מחוזית",
-                    "דשבורד חומ\"ס"
+                    {
+                      "content": "דשבורד חומ\"ס",
+                      "url": "https://experience.arcgis.com/experience/118308a4fa704f2faa80c1fc782b40ec/page/%d7%a0%d7%99%d7%94%d7%95%d7%9c/"
+                    }
                   ],
                   [
                     "המלצות לרמה ממונה",
-                    "שוע\"ל אזרחי"
+                    {
+                      "content": "שוע\"ל אזרחי",
+                      "url": "https://shual.org.il/FoxClientv3/apps/maps"
+                    }
                   ]
                 ]
               }
@@ -200,14 +207,24 @@
                   "משימות",
                   "מערכות"
                 ],
+                "linkColumns": [
+                  0,
+                  1
+                ],
                 "rows": [
                   [
                     "גיבוש תמ\"צ לאומית",
-                    "דשבורד חומ\"ס"
+                    {
+                      "content": "דשבורד חומ\"ס",
+                      "url": "https://experience.arcgis.com/experience/118308a4fa704f2faa80c1fc782b40ec/page/%d7%a0%d7%99%d7%94%d7%95%d7%9c/"
+                    }
                   ],
                   [
                     "סיכום אופן הטיפול בפערים",
-                    "שוע\"ל אזרחי"
+                    {
+                      "content": "שוע\"ל אזרחי",
+                      "url": "https://shual.org.il/FoxClientv3/apps/maps"
+                    }
                   ],
                   [
                     "קביעת סדר עדיפויות"
@@ -286,10 +303,14 @@
                   "משימות",
                   "מערכות"
                 ],
+                "linkColumns": [1],
                 "rows": [
                   [
                     "פרסום היתר שינוע כללי",
-                    "פורטל חירום לאומי"
+                    {
+                      "content": "פורטל חירום לאומי",
+                      "url": "https://shual.org.il/FoxClientv3/apps/maps"
+                    }
                   ],
                   [
                     "ריכוז בקשות שינוע",

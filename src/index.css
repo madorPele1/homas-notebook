@@ -454,6 +454,10 @@ th {
   width: 40%;
 }
 
+.filter-bar select {
+    width: 45%;
+}
+
 .filter-bar button {
   padding: 0.5rem 1rem;
   background: white;
@@ -465,7 +469,7 @@ th {
 
 .material-card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
   gap: 1rem;
   font-size: 0.9rem;
 }

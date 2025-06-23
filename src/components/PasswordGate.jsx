@@ -16,7 +16,7 @@ function PasswordGate({ onUnlock }) {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "100svh",
         background: "linear-gradient(#249eb4, rgb(255, 255, 255))",
         display: "flex",
         justifyContent: "center",
