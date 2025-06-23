@@ -6,7 +6,7 @@ function PasswordGate({ onUnlock }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input === "1234") {
+    if (input === "ALal258!") {
       onUnlock();
     } else {
       setError("סיסמה שגויה, נסה שוב");

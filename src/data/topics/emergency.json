@@ -303,13 +303,15 @@
                   "משימות",
                   "מערכות"
                 ],
-                "linkColumns": [1],
+                "linkColumns": [
+                  1
+                ],
                 "rows": [
                   [
                     "פרסום היתר שינוע כללי",
                     {
                       "content": "פורטל חירום לאומי",
-                      "url": "https://shual.org.il/FoxClientv3/apps/maps"
+                      "url": "https://www.oref.org.il/heb/articles/hazardous-materials/main/2805"
                     }
                   ],
                   [

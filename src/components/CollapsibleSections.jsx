@@ -39,6 +39,11 @@ function CollapsibleSections({ sections, color }) {
             className="section-btn"
             onClick={() => toggleSection(secIdx)}
           >
+            <img
+              src="/homas-notebook/assets/back-icon.svg"
+              alt=""
+              className={`toggle-icon ${openSection === secIdx ? "rotated" : ""}`}
+            />
             {section.title}
           </button>
 
